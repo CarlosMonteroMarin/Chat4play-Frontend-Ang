@@ -1,6 +1,6 @@
 .box-content{
     background-image: url(../assets/images/logo_fondo8.png);
-    height: 100vh;
+    min-height: 100vh;
     background-repeat: repeat;
     background-position: center center;
     top: 0px;
