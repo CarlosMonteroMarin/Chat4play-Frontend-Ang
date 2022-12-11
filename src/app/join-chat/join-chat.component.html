@@ -1,1 +1,14 @@
-<p>join-chat works!</p>
+<div class="rounded container-fluid" id="contenedor_main">
+    <div class="row">
+        <div class="col">
+            <p id ="texto_container_main" style="font-size:35px;"><strong>Únete a un chat</strong><br></p>
+            <p id="texto_container_main" style="font-size: 30px;">¿Como se llama el chat?
+                <input id="input_chat" type="text" class="form-control mt-3 rounded" placeholder="Nombre del chat..." aria-label="Nombre del chat..." aria-describedby="basic-addon1">
+            </p>
+            <p id="texto_container_main" style="font-size: 30px;">Resultado de la busqueda:
+                <textarea class="form-control mb-2" id="textAreaExample1" rows="9"></textarea>
+                <button type="button" id="btn_unirse" style="font-size:20px;" onclick="joinChat()">Unirse</button>
+            </p>
+        </div>
+    </div>
+</div>

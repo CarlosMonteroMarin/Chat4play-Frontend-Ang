@@ -1,1 +1,29 @@
-<p>profile works!</p>
+<div class="container content_perfil">
+    <div class="row m-auto box_informacion_personal">
+        <div class="col column_imagen_perfil">
+            <img class="imagen_perfil" src="https://pbs.twimg.com/media/ETSKPfpU8AAun1U.jpg" alt="">
+            <button class="cambiar_imagen">CAMBIAR IMAGEN</button>
+            <p style="font-weight:bold;font-size:25px;margin-bottom:-20px;">Alonsito87</p>
+        </div>
+        <div class="col">
+            <h1 class="titulo_informacion_personal">INFORMACIÓN PERSONAL</h1>
+            <form action="./index.html" class="form_cambiar_perfil">
+                <div class="datos_informacion_personal">Nombre:</div>
+                <input class="input_informacion_personal" type="text" value="" name="name"><br>
+                <div class="datos_informacion_personal">Apellidos:</div>
+                <input class="input_informacion_personal" type="text" value="" name="surnames"><br>
+                <div class="datos_informacion_personal">Apodo:</div>
+                <input class="input_informacion_personal" type="text" value="" name="nickname"><br>
+                <div class="datos_informacion_personal">Correo electrónico:</div>
+                <input class="input_informacion_personal" type="email" value="" name="email"><br>
+                <div class="datos_informacion_personal">Contraseña:</div>
+                <input class="input_informacion_personal" type="password" value="" name="password"><br>
+            </form>
+        </div>
+        <div>
+            <a href="/home-yeslog"><button class="volver_button">Volver</button></a>
+            <button class="guardar_button" onclick="guardarInfo()">Guardar</button>
+        </div>
+    </div>
+</div>
+
