@@ -1,28 +1,24 @@
 <div class="container content_perfil">
     <div class="row m-auto box_informacion_personal">
+        <h1>INFORMACIÓN PERSONAL</h1>
         <div class="col column_imagen_perfil">
-            <img class="imagen_perfil" src="https://pbs.twimg.com/media/ETSKPfpU8AAun1U.jpg" alt=""><br>
+            <img class="imagen_perfil" src="../../assets/images/avatar2.png" alt=""><br>
             <button class="cambiar_imagen">CAMBIAR IMAGEN</button>
-            <p style="font-weight:bold;font-size:25px;margin-bottom:-20px;">Alonsito87</p>
-        </div>
-        <div class="col">
-            <h1 class="titulo_informacion_personal">INFORMACIÓN PERSONAL</h1>
-            <form action="./index.html" class="form_cambiar_perfil">
-                <div class="datos_informacion_personal">Nombre:</div>
-                <input class="input_informacion_personal" type="text" value="" name="name"><br>
-                <div class="datos_informacion_personal">Apellidos:</div>
-                <input class="input_informacion_personal" type="text" value="" name="surnames"><br>
-                <div class="datos_informacion_personal">Apodo:</div>
-                <input class="input_informacion_personal" type="text" value="" name="nickname"><br>
-                <div class="datos_informacion_personal">Correo electrónico:</div>
-                <input class="input_informacion_personal" type="email" value="" name="email"><br>
-                <div class="datos_informacion_personal">Contraseña:</div>
-                <input class="input_informacion_personal" type="password" value="" name="password"><br>
-            </form>
+            <p>Alonsito87</p><br><br>
+            <div class="txt-subtitle">NOMBRE:</div>
+                <input type="text" value="" name="name"><br>
+            <div class="txt-subtitle">APELLIDOS:</div>
+                <input type="text" value="" name="surnames"><br>
+            <div class="txt-subtitle">APODO:</div>
+                <input type="text" value="" name="nickname"><br>
+            <div class="txt-subtitle">CORREO ELECTRÓNICO:</div>
+                <input type="email" value="" name="email"><br>
+            <div class="txt-subtitle">CONTRASEÑA:</div>
+                <input type="password" value="" name="password"><br>
         </div>
         <div>
-            <a href="/home-yeslog"><button class="volver_button">Volver</button></a>
-            <button class="guardar_button" onclick="guardarInfo()">Guardar</button>
+            <a href="/home-yeslog"><button class="btn-primary">VOLVER</button></a>
+            <a href=""><button class="btn-primary" onclick="guardarInfo()">GUARDAR</button></a>
         </div>
     </div>
 </div>

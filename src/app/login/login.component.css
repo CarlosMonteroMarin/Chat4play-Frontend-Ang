@@ -1,41 +1,23 @@
-.form-login {
+.form-estructure {
     margin: auto;
-    margin-top: 230px;
-    max-width: 500px;
-    height: 475px;
+    margin-top: 180px;
+    max-width: 650px;
+    max-height: 600px;
     border-radius: 40px;
     background-color: #D9D9D9;
-    box-shadow: rgb(168, 168, 168) 4px 4px;
+    padding: 0px 0px 50px 0px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     text-align: center;
 }
 
-.titulo_iniciar_registrar {
-    color: white;
-    background-color: #600281;
-    text-align: center;
-    border-radius: 40px 40px 0px 0px;
-    height: 70px;
-    padding: 20px 0px 5px 0px;
-    font-size: 25px;
-}
-
-.titulos_login {
+.txt-subtitle {
     font-size: 18px;
     font-weight: bold;
-    margin: 30px 0px 10px 0px;
+    margin: 40px 0px 20px 0px;
     text-align: center;
 }
 
-.input_login_register {
-    border: none;
-    border-radius: 5px;
-    width: 70%;
-    height: 30px;
-    font-size: 16px;
-    box-shadow: 2px 2px rgb(168, 168, 168);
-}
-
-.iniciar_button {
+.btn-primary {
     background-color: #741BE5;
     color: white;
     right: 70px;
@@ -47,8 +29,37 @@
     font-size: 15px;
     font-weight: bold;
     margin-top: 50px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+}
+.btn-primary:hover{
+    background-color: #a769f8;
 }
 
+input {
+    border: none;
+    border-radius: 10px;
+    width: 70%;
+    height: 30px;
+    font-size: 16px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+    padding: 10px;
+}
+
+.selector-games{
+    width: 230px;
+    height: 30px;
+    border: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+}
+
+h1 {
+    color: white;
+    background-color: #600281;
+    border-radius: 40px 40px 0px 0px;
+    padding: 20px;
+    font-size: xx-large;
+}
 .tienes_cuenta {
     margin: 25px;
     font-size: 14px;

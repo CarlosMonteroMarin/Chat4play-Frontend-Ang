@@ -40,6 +40,7 @@ h1 {
     background-color: #600281;
     border-radius: 40px 40px 0px 0px;
     padding: 20px;
+    font-size: xx-large;
 }
 .listado-chats{
     width: 90%;
@@ -50,5 +51,4 @@ h1 {
     border: none;
     resize: none;
     padding: 10px;
-
 }
