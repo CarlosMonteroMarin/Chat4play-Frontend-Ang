@@ -12,6 +12,7 @@ import { MychatsComponent } from './mychats/mychats.component';
 import { JoinChatComponent } from './join-chat/join-chat.component';
 import { CreateChatComponent } from './create-chat/create-chat.component';
 import { IntoChatComponent } from './into-chat/into-chat.component';
+import { ElementsModule } from './elements/elements.module';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,12 @@ import { IntoChatComponent } from './into-chat/into-chat.component';
     MychatsComponent,
     JoinChatComponent,
     CreateChatComponent,
-    IntoChatComponent
+    IntoChatComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ElementsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

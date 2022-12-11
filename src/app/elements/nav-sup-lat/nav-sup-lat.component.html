@@ -1,0 +1,41 @@
+<div>
+    <nav class="navbar navbar-dark fixed-top barra-superior">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="/home-yeslog"><strong>Chat4Play</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header barra-lateral-cabezera">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menú</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body barra-lateral-cuerpo">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a href="/profile"><img class="img-fluid img-avatar"src="../../../assets/images/avatar2.png" alt="Imagen_perfil"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nickname-menu" href="/profile">"nombre usuario"</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/my-chats"><button type="button" class="btn-menu-lateral">MIS CHATS</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/join-chat"><button type="button" class="btn-menu-lateral">UNIRSE A UN CHAT</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/create-chat"><button type="button" class="btn-menu-lateral">CREAR UN CHAT</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/profile"><button type="button" class="btn-menu-lateral">MI PERFIL</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn-cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+</div>

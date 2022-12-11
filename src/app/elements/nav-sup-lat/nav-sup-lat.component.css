@@ -1,0 +1,61 @@
+.barra-superior{
+    background: #600281;
+    color: white;
+}
+
+.barra-lateral-cabezera{
+    background: #600281;
+}
+
+.barra-lateral-cuerpo{
+    background: #741BE5;
+}
+
+.btn-menu-lateral{
+    width: 75%;
+    height: 55px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+    border-radius: 25px;
+    margin: auto;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-cerrar-sesion{
+    width: 180px;
+    height: 45px;
+    background: #600281;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+    border-radius: 25px;
+    margin-top: 12vh;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: none;
+}
+
+.btn-menu-lateral:hover{
+    background-color: #bebebe;
+}
+
+.btn-cerrar-sesion:hover{
+    background: #ffffffab;
+}
+ul li{
+    text-align: center;
+    margin: 10px;
+    margin-left: 24px;
+}
+
+.img-avatar{
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+    border-radius: 100%;
+    border: 2px solid;
+    width: 200px;
+}
+
+.nickname-menu{
+    color: white;
+    font-weight: 900;
+    font-size: x-large;
+}
