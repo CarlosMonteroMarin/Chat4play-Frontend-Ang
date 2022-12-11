@@ -1,11 +1,12 @@
-
-<div class="container-fluid" id="contenedor_main">
+<div class="container-fluid">
     <div class="row">
-        <div class="col">
-            <p id ="texto_container_main" style="font-size:45px;"><strong>MI LISTA DE CHATS</strong>
-                <textarea class="form-control mt-3 mb-2" id="textAreaExample1" rows="15"></textarea>
-                <button type="button" id="btn_unirse" style="font-size:20px;" onclick="entrarChat()">Entrar</button>
-            </p>
+        <div class="col columna">
+            <div class="form-create-chat">
+                <h1 id="h1-create-chat">MI LISTA DE CHATS</h1>
+                <textarea class="listado-chats" readonly></textarea>
+                <button class="btn-primary" type="submit" onclick="entrarChat()">ENTRAR</button>
+            </div>
         </div>
     </div>
 </div>
+
