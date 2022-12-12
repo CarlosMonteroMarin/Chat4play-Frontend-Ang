@@ -42,13 +42,17 @@ h1 {
     padding: 20px;
     font-size: xx-large;
 }
-.listado-chats{
-    width: 90%;
+
+
+.list-objects{
+    width: 80%;
     height: 400px;
-    margin: 15px;
     border-radius: 25px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
-    border: none;
-    resize: none;
     padding: 10px;
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    overflow-y: scroll;
+
 }
