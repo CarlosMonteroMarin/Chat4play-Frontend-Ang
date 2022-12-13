@@ -15,6 +15,7 @@ import { IntoChatComponent } from './into-chat/into-chat.component';
 import { ElementsModule } from './elements/elements.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AddVideojuegoComponent } from './add-videojuego/add-videojuego.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     JoinChatComponent,
     CreateChatComponent,
     IntoChatComponent,
+    AddVideojuegoComponent,
   ],
   imports: [
     BrowserModule,

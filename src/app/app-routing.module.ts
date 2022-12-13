@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddVideojuegoComponent } from './add-videojuego/add-videojuego.component';
 import { CreateChatComponent } from './create-chat/create-chat.component';
 import { HomeNologComponent } from './home-nolog/home-nolog.component';
 import { HomeYeslogComponent } from './home-yeslog/home-yeslog.component';
@@ -12,6 +13,10 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
 
+{
+  path:'add-videogame',
+  component:AddVideojuegoComponent
+},
 {
   path:'create-chat',
   component:CreateChatComponent
