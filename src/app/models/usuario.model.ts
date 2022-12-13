@@ -1,10 +1,10 @@
 export class Usuario {
-    id_usuario?: any;
-    apellidos?: string;
-    apodo?: string;
-    contrasenia?: string;
-    email?: string;
-    nombre?: string;
+    id_usuario: any;
+    apellidos: string;
+    apodo: string;
+    contrasenia: string;
+    email: string;
+    nombre: string;
 
     constructor (id_usuario: any, apellidos: string, apodo: string, contrasenia: string, email: string, nombre: string) {
         this.id_usuario = id_usuario;

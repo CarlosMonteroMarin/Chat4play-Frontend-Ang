@@ -1,9 +1,9 @@
 export class Mensajes {
-    id_mensaje?: any;
-    fecha?: Date;
-    mensaje?: string;
-    id_party?: any;
-    id_usuario?: any;
+    id_mensaje: any;
+    fecha: Date;
+    mensaje: string;
+    id_party: any;
+    id_usuario: any;
 
     constructor (id_mensaje: any, fecha: Date, mensaje: string, id_party: any, id_usuario: any) {
         this.id_mensaje = id_mensaje;

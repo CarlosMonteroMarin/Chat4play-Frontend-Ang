@@ -1,7 +1,7 @@
 export class Party {
-    id_party?: any;
-    nombre?: string;
-    id_videojuego?: any;
+    id_party: any;
+    nombre: string;
+    id_videojuego: any;
 
     constructor (id_party: any, nombre: string, id_videojuego: any) {
         this.id_party = id_party;
