@@ -11,11 +11,6 @@ import { Party } from '../models/party.model';
 })
 export class CreateChatComponent {
 
-  chat: Party = {
-    nombre: '',
-    id_videojuego: null,
-  }
-
   constructor(private videojuegoService: VideojuegoService, private partyService: PartyService) {}
 
   videojuegos:any = [];
@@ -24,13 +19,17 @@ export class CreateChatComponent {
     this.videojuegoService.getAll().subscribe(result => this.videojuegos = result)
   }
 
-  guardarParty() {
-    const data = {
-      nombre: this.chat.nombre,
-      videojuego: this.chat.id_videojuego,
-    };
+  nombre: string = "";
+  id_videojuego: number = 0;
 
-    this.partyService.create(data).subscribe(response => {
+  guardarParty() {
+
+    const chat: Party = {
+      nombre: this.nombre,
+      id_videojuego: this.id_videojuego,
+    }
+
+    this.partyService.create(chat).subscribe(response => {
       console.log(response);
     },
     error => {
