@@ -17,4 +17,8 @@ export class UsuarioService {
   get(id: any) {
     return this.http.get('https://proyecto-bbdd-production-36ba.up.railway.app/api/usuario/'+id);
   }
+
+  post(data: any){
+    return this.http.post('https://proyecto-bbdd-production-36ba.up.railway.app/api/usuario',data);
+  }
 }
