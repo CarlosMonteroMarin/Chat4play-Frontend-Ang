@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 export class CreateChatComponent {
 
   nombre: string = "";
-  id_videojuego: number= 0;
+  id_videojuego: any= 0;
 
   videojuegos:any = [];
 
@@ -24,11 +24,14 @@ export class CreateChatComponent {
     this.videojuegoService.getAll().subscribe(result => this.videojuegos = result)
   }
 
-  guardarParty() {
+  async guardarParty() {
+    const response = await fetch('https://proyecto-bbdd-production-36ba.up.railway.app/api/videojuego/'+this.id_videojuego);
+    const data = await response.json();
+
     if(this.nombre!="" && this.id_videojuego !=0){
       const party: Party = {
         nombre: this.nombre,
-        id_videojuego: this.id_videojuego
+        videojuego: data
       }
       Swal.fire({
         position: 'center',
