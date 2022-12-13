@@ -13,6 +13,8 @@ import { JoinChatComponent } from './join-chat/join-chat.component';
 import { CreateChatComponent } from './create-chat/create-chat.component';
 import { IntoChatComponent } from './into-chat/into-chat.component';
 import { ElementsModule } from './elements/elements.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ElementsModule } from './elements/elements.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ElementsModule
+    FormsModule,
+    ElementsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
