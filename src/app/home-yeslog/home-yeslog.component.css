@@ -1,0 +1,10 @@
+#card1{
+    margin: 20px 20px 175px 40px;
+    width: 500px;
+    max-height: 525px;
+    border-radius: 5px;
+    display: inline-block;
+    top: 250px;
+    left: 320px;
+
+}

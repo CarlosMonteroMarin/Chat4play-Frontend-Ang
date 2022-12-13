@@ -12,6 +12,7 @@ import { Party } from '../models/party.model';
 export class CreateChatComponent {
 
   chat: Party = {
+    id_party: null,
     nombre: '',
     id_videojuego: null,
   }
