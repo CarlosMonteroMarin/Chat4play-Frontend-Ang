@@ -5,18 +5,18 @@
             <form class="form-estructure">
                 <h1 class="titulo_iniciar_registrar">REGISTRARSE</h1>
                 <div class="txt-subtitle">Nombre:</div>
-                    <input type="text" value="" name="name">
+                    <input type="text" [(ngModel)]="nombre" name="nombre">
                 <div class="txt-subtitle">Apellidos:</div>
-                    <input type="text" value="" name="surnames">
+                    <input type="text" [(ngModel)]="apellidos" name="apellidos">
                 <div class="txt-subtitle">Apodo:</div>
-                    <input type="text" value="" name="nickname">
+                    <input type="text" [(ngModel)]="apodo" name="apodo">
                 <div class="txt-subtitle">Correo electrónico:</div>
-                    <input type="text" value="" name="email">
+                    <input type="text" [(ngModel)]="email" name="email">
                 <div class="txt-subtitle">Contraseña:</div>
-                    <input type="password" value="" name="password">
+                    <input type="password" [(ngModel)]="contrasenia" name="contrasenia">
                 <div class="txt-subtitle">Confirmar contraseña:</div>
-                    <input type="password" value="" name="confirm_password"><br>
-                <a href="/home-yeslog"><button class="btn-primary" type="submit" onclick="register()">REGISTRAR</button></a>
+                    <input type="password" [(ngModel)]="confirm_contra" name="confirm_contra"><br>
+                <a href="/login"><button class="btn-primary" type="submit" (click)="register()">REGISTRAR</button></a>
                 <p class="tienes_cuenta"><a href="./login">¿Ya tienes cuenta? ¡Inicia sesión!</a></p>
             </form>
         </div>
