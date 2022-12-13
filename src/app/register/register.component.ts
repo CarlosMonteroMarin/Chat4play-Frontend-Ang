@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 import { UsuarioService } from '../elements/services/usuario.service';
 import { Usuario } from '../models/usuario.model';
 
@@ -34,12 +35,30 @@ export class RegisterComponent {
         this.usuarioService.post(usuario).subscribe(response => {
           console.log(response);
           });
-          alert("Usuario registrado correctamente")
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Usuario registrado correctamente',
+            showConfirmButton: false,
+            timer: 2000
+          })
       }else{
-        alert("Las contraseñas no coinciden.");
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Error\nLas contraseñas no coinciden',
+          showConfirmButton: false,
+          timer: 2000
+        })
       }
     }else{
-      alert("Complete todos los campos.");
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Error\nComplete todos los campos',
+        showConfirmButton: false,
+        timer: 2000
+      })
     }
   }
 }
