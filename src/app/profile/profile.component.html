@@ -1,21 +1,23 @@
 <div class="container content_perfil">
     <div class="row m-auto box_informacion_personal">
         <h1>INFORMACIÓN PERSONAL</h1>
-        <div class="col column_imagen_perfil">
-            <img class="imagen_perfil" src="../../assets/images/avatar2.png" alt=""><br>
-            <button class="cambiar_imagen">CAMBIAR IMAGEN</button>
-            <p>Alonsito87</p><br><br>
-            <div class="txt-subtitle">NOMBRE:</div>
-                <input type="text" value="" name="name"><br>
-            <div class="txt-subtitle">APELLIDOS:</div>
-                <input type="text" value="" name="surnames"><br>
-            <div class="txt-subtitle">APODO:</div>
-                <input type="text" value="" name="nickname"><br>
-            <div class="txt-subtitle">CORREO ELECTRÓNICO:</div>
-                <input type="email" value="" name="email"><br>
-            <div class="txt-subtitle">CONTRASEÑA:</div>
-                <input type="password" value="" name="password"><br>
-        </div>
+        <form action="" enctype="multipart/form-data">
+            <div class="col column_imagen_perfil">
+                <img class="imagen_perfil" src="../../assets/images/avatar2.png"><br>
+                <input class="file-select " type="file" name="adjunto" accept=".jpg,.png"/><br>
+                <p>Alonsito87</p><br><br>
+                <div class="txt-subtitle">NOMBRE:</div>
+                    <input class="box-write" type="text" value="" name="name"><br>
+                <div class="txt-subtitle">APELLIDOS:</div>
+                    <input class="box-write" type="text" value="" name="surnames"><br>
+                <div class="txt-subtitle">APODO:</div>
+                    <input class="box-write" type="text" value="" name="nickname"><br>
+                <div class="txt-subtitle">CORREO ELECTRÓNICO:</div>
+                    <input class="box-write" type="email" value="" name="email"><br>
+                <div class="txt-subtitle">CONTRASEÑA:</div>
+                    <input class="box-write" type="password" value="" name="password"><br>
+            </div>
+        </form>
         <div>
             <a href="/home-yeslog"><button class="btn-primary">VOLVER</button></a>
             <a href=""><button class="btn-primary" onclick="guardarInfo()">GUARDAR</button></a>

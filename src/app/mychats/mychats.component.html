@@ -4,7 +4,12 @@
             <div class="form-create-chat">
                 <h1 id="h1-create-chat">MI LISTA DE CHATS</h1>
                 <div class="list-objects">
-
+                    <div class="object" *ngFor="let lists of chats">
+                        <ol>
+                            <li>{{lists.nombre}}</li>
+                            <li> | {{lists.videojuego}}</li>
+                        </ol>
+                    </div>
                 </div>
                 <button class="btn-primary" type="submit" onclick="entrarChat()">ENTRAR</button>
             </div>

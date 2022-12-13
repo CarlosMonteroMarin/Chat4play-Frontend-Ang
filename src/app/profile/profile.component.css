@@ -24,8 +24,8 @@
     height: 200px;
     border-radius: 100px;
     box-shadow: 2px 2px rgb(168, 168, 168);
+    margin-bottom: 5px;
 }
-
 
 .cambiar_imagen {
     margin-bottom: 0px;
@@ -38,7 +38,7 @@
 }
 
 
-input {
+.box-write {
     border: none;
     border-radius: 10px;
     width: 70%;
@@ -71,7 +71,7 @@ input {
 
 h1 {
     color: white;
-    background-color: #600281;
+    background-color: #741BE5;
     border-radius: 40px 40px 0px 0px;
     padding: 20px;
     font-size: xx-large;
@@ -87,4 +87,34 @@ p{
     font-weight: bold;
     text-align: center;
 }
+
+.file-select {
+    position: relative;
+    display: inline-block;
+
+  }
+
+  .file-select::before {
+    background-color: #D9D9D9;
+    color: #600281;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    content: 'Cambiar imagen';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-style: italic;
+  }
+
+  .file-select input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+  }
+
 
