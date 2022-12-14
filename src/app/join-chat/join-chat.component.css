@@ -66,13 +66,17 @@ h1 {
     height: 280px;
     border-radius: 25px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
-    padding: 10px;
     background-color: white;
     margin: auto;
     overflow-y: scroll;
-
+    border:2px solid;
 }
 
+.object{
+    border-bottom: 2px solid grey;
+    padding-bottom:10px;
+    margin-top:-8px;
+}
 /**::-webkit-scrollbar{
     background: #afafaf;
     border-bottom-right-radius: 10px;

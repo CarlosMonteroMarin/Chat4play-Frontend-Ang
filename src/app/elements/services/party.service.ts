@@ -21,4 +21,8 @@ export class PartyService {
   create(data: any) {
     return this.http.post('https://proyecto-bbdd-production-36ba.up.railway.app/api/party', data);
   }
+
+  findByNombre(nombre: any) {
+    return this.http.get<Party[]>('https://proyecto-bbdd-production-36ba.up.railway.app/api/party/nombre/'+nombre);
+  }
 }
