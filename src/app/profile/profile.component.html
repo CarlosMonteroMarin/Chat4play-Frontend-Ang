@@ -3,24 +3,35 @@
         <h1>INFORMACIÓN PERSONAL</h1>
         <form action="" enctype="multipart/form-data">
             <div class="col column_imagen_perfil">
-                <img class="imagen_perfil" src="../../assets/images/avatar2.png"><br>
-                <input class="file-select " type="file" name="adjunto" accept=".jpg,.png"/><br>
-                <p>Alonsito87</p><br><br>
+                <img class="imagen_perfil" [src]="url"><br>
+
+                <select #teams (change)="onSelected(teams.value)">
+                    <option default>Escoge una foto de perfil!</option>
+                    <option>Seta</option>
+                    <option>Peter</option>
+                    <option>Minecraft</option>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                  </select>
+
+
+                <!--<input class="file-select " type="file" name="img_avatar" accept=".jpg,.png" (change)="onFileSelected($event)"/><br>-->
+                <p>{{usuario.apodo}}</p><br><br>
                 <div class="txt-subtitle">NOMBRE:</div>
-                    <input class="box-write" type="text" value="" name="name"><br>
-                <div class="txt-subtitle">APELLIDOS:</div>
-                    <input class="box-write" type="text" value="" name="surnames"><br>
-                <div class="txt-subtitle">APODO:</div>
-                    <input class="box-write" type="text" value="" name="nickname"><br>
-                <div class="txt-subtitle">CORREO ELECTRÓNICO:</div>
-                    <input class="box-write" type="email" value="" name="email"><br>
+                    <input class="box-write" type="text" [(ngModel)]="nombre" name="nombre" value="{{usuario.nombre}}"><br>
+                <div class="txt-subtitle" >APELLIDOS:</div>
+                    <input class="box-write" type="text" [(ngModel)]="apellidos" name="apellidos" value="{{usuario.apellidos}}"><br>
+                <div class="txt-subtitle" >APODO: </div>
+                    <input class="box-write" type="text" [(ngModel)]="apodo" name="apodo" value="{{usuario.apodo}}"><br>
+                <div class="txt-subtitle">CORREO ELECTRÓNICO: </div>
+                    <input class="box-write" type="email" [(ngModel)]="email" name="email" value="{{usuario.email}}"><br>
                 <div class="txt-subtitle">CONTRASEÑA:</div>
-                    <input class="box-write" type="password" value="" name="password"><br>
+                    <input class="box-write" type="password" [(ngModel)]="contrasenia" name="contrasenia" value="{{usuario.contrasenia}}"><br>
             </div>
         </form>
         <div>
             <a href="/home-yeslog"><button class="btn-primary">VOLVER</button></a>
-            <a href=""><button class="btn-primary" onclick="guardarInfo()">GUARDAR</button></a>
+            <button class="btn-primary" (click)="guardarInfo()">GUARDAR</button>
         </div>
     </div>
 </div>

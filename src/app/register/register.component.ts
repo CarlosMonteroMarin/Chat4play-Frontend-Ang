@@ -24,7 +24,7 @@ export class RegisterComponent {
   register(): void {
     if(this.nombre !="" && this.apellidos !="" && this.apodo !="" && this.email !="" && this.contrasenia !="" && this.confirm_contra !=""){
       if (this.contrasenia == this.confirm_contra){
-        const usuario : Usuario = {
+        const usuario : any = {
           nombre: this.nombre,
           apellidos: this.apellidos,
           apodo: this.apodo,
