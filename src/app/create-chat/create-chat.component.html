@@ -4,11 +4,11 @@
             <form class="form-estructure">
                 <h1>CREA TU PROPIO CHAT</h1>
                 <div class="txt-subtitle">¿COMO SE LLAMARÁ EL CHAT?</div>
-                    <input type="text" value="" name="nombre"><br>
+                    <input type="text" [(ngModel)]="nombre" name="nombre"><br>
                 <div class="txt-subtitle">¿SOBRE QUE JUEGO SERÁ?</div>
-                    <select class="selector-games" name="id_videojuego">
-                        <option value="">Seleccionar...</option>
-                        <option *ngFor="let videojuego of videojuegos" value="{{ videojuego.id_videojuego }}">{{ videojuego.titulo }}</option>
+                    <select class="selector-games" [(ngModel)]="id_videojuego" name="id_videojuego">
+                        <option value = 0 disabled>Seleccionar...</option>
+                        <option *ngFor="let videojuego of videojuegos" value="{{videojuego.id_videojuego}}">{{videojuego.titulo}}</option>
                     </select><br><br><br><br><br><br>
                 <button class="btn-primary" type="submit" (click)="guardarParty()">CREAR</button>
             </form>

@@ -11,9 +11,9 @@
     padding: auto;
     padding-top: 75px;
     padding-bottom: 100px;
-    text-shadow: gray 1px 4px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     color: rgb(44, 44, 44);
-    box-shadow: rgb(168, 168, 168) 4px 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     display: inline-block;
     position: relative;
     top: 150px;
@@ -28,11 +28,11 @@
     border-radius: 40px;
     background-color: #741BE5;
     padding: 100px 30px 0px 30px;
-    box-shadow: rgb(168, 168, 168) 4px 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     font-size: 50px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    text-shadow: rgb(77, 77, 77) 1px 4px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     color: rgb(255, 255, 255);
     display: inline-block;
     position: relative;
@@ -50,9 +50,9 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     padding: 40px 30px 30px 30px;
-    text-shadow: gray 1px 4px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     color: rgb(44, 44, 44);
-    box-shadow: rgb(168, 168, 168) 4px 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     display: inline-block;
     position: relative;
     top: 150px;

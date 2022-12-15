@@ -4,27 +4,15 @@
             <form class="form-estructure">
                 <h1>ÚNETE A UN CHAT</h1>
                 <div class="txt-subtitle">¿COMO SE LLAMA EL CHAT?</div>
-                <input type="text" value="" name="chat_name"><br>
+                <input type="text" [(ngModel)]="nombre" name="nombre"><br>
+                <button class="btn-primary" type="submit" (click)="buscar()">BUSCAR</button>
                 <div class="txt-subtitle">RESULTADO DE LA BÚSQUEDA:</div>
                 <div class="list-objects">
                     <pre>
-
-
-
-
-
-
-                    f
-
-
-
-
-
-
-
+                        <p (click)="joinChat()" class="object" *ngFor="let ch of chats"><strong> Nombre: {{ch.nombre}} , Juego: {{ch.videojuego.titulo}}</strong></p>
                     </pre>
                 </div>
-                <button class="btn-primary" type="submit" onclick="joinChat()">UNIRSE</button>
+                <div class="txt-subtitle">Dale click para unirte al chat!</div>
             </form>
         </div>
     </div>

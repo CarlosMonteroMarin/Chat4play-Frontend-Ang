@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PartyService } from '../elements/services/party.service';
 
 @Component({
   selector: 'app-mychats',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class MychatsComponent {
 
+  nombre: string="";
+  videojuego: any="";
+
+  chats: any = null;
+
+  constructor (private partyService: PartyService,){}
+
+
+  ngOnInit() {
+    this.partyService.getAll().subscribe(result => this.chats = result)
+  }
 }
