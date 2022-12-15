@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { VideojuegoService } from '../elements/services/videojuego.service';
 import { PartyService } from '../elements/services/party.service';
 import { Party } from '../models/party.model';
@@ -25,8 +24,7 @@ export class CreateChatComponent {
   }
 
   async guardarParty() {
-    const response = await fetch('https://proyecto-bbdd-production-36ba.up.railway.app/api/videojuego/'+this.id_videojuego);
-    const data = await response.json();
+    const data = await this.videojuegoService.get(this.id_videojuego).toPromise();
 
     if(this.nombre!="" && this.id_videojuego !=0){
       const party: Party = {

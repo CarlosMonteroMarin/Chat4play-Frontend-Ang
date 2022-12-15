@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { PartyService } from '../elements/services/party.service';
 
 @Component({
   selector: 'app-into-chat',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./into-chat.component.css']
 })
 export class IntoChatComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private partyService: PartyService) {}
 
   chat:any = null;
 
@@ -22,5 +23,14 @@ export class IntoChatComponent {
         console.log("No se han podido seleccionar los chats");
       }
     );
+  }
+
+  borrarChat() {
+    this.partyService.delete(this.chat.id_party).subscribe(response => {
+      console.log(response);
+    },
+    error => {
+      console.log(error);
+    })
   }
 }

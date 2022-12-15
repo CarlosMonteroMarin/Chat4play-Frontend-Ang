@@ -25,4 +25,10 @@ export class PartyService {
   findByNombre(nombre: any) {
     return this.http.get<Party[]>('https://proyecto-bbdd-production-36ba.up.railway.app/api/party/nombre/'+nombre);
   }
+
+  delete(id: any) {
+    // if (usuario es admin o dueño del chat) {
+    return this.http.delete('https://proyecto-bbdd-production-36ba.up.railway.app/api/party/'+id);
+    // }
+  }
 }
