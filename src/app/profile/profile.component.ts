@@ -36,6 +36,7 @@ export class ProfileComponent {
 
   ngOnInit() {
     this.usuarioService.get(29).subscribe(result => this.usuario = result);
+    console.log(this.usuario.nombre)
   }
 
   onSelected(value:string){
@@ -50,8 +51,19 @@ export class ProfileComponent {
   }
   guardarInfo(){
 
-
     //Comprobar cual de ellos no es vacio entonces significa que se ha cambiado
+    if((!this.nombre)){this.nombre=this.usuario.nombre}
+
+    if((!this.apellidos)){this.apellidos=this.usuario.apellidos}
+
+    if((!this.apodo)){this.apodo=this.usuario.apodo}
+
+    if((!this.contrasenia)){this.contrasenia=this.usuario.contrasenia}
+
+    if((!this.email)){this.email=this.usuario.email}
+
+    if((!this.img_avatar)){this.img_avatar=this.usuario.img_avatar}
+
     const usuario_aux: Usuario={
       nombre:this.nombre,
       apellidos:this.apellidos,
