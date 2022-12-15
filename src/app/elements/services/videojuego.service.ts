@@ -17,4 +17,8 @@ export class VideojuegoService {
   get(id: any) {
     return this.http.get('https://proyecto-bbdd-production-36ba.up.railway.app/api/videojuego/'+id);
   }
+
+  post(data: any){
+    return this.http.post('https://proyecto-bbdd-production-36ba.up.railway.app/api/videojuego',data);
+  }
 }
