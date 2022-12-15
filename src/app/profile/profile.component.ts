@@ -16,7 +16,8 @@ export class ProfileComponent {
     apellidos: '',
     apodo: '',
     contrasenia: '',
-    email: ''
+    email: '',
+    img_avatar:''
   }
 
     nombre:string|any='';
@@ -24,16 +25,29 @@ export class ProfileComponent {
     apodo:string|any='';
     contrasenia:string|any='';
     email:string|any='';
+    img_avatar:string|any='';
+
+    selectedOption:string|any='';
+    url="../assets/images_profiles/pregunta.png";
 
   constructor(private usuarioService: UsuarioService) {
 
   }
 
   ngOnInit() {
-    this.usuarioService.get(10).subscribe(result => this.usuario = result);
+    this.usuarioService.get(29).subscribe(result => this.usuario = result);
   }
 
-
+  onSelected(value:string){
+    switch(value){
+      case 'Seta': {this.img_avatar="../assets/images_profiles/seta.png";break;};
+      case 'Peter': {this.img_avatar="../assets/images_profiles/peter.png";break;};
+      case 'Minecraft': {this.img_avatar="../assets/images_profiles/minecraft.png";break;};
+      case 'Perro': {this.img_avatar="../assets/images_profiles/perro.png";break;};
+      case 'Gato': {this.img_avatar="../assets/images_profiles/gato.png";break;};
+    }
+      this.url=this.img_avatar;
+  }
   guardarInfo(){
 
 
@@ -44,9 +58,10 @@ export class ProfileComponent {
       apodo:this.apodo,
       contrasenia:this.contrasenia,
       email:this.email,
+      img_avatar:this.img_avatar
     }
 
-    this.usuarioService.put(10,usuario_aux).subscribe(result => console.log(result));
+    this.usuarioService.put(29,usuario_aux).subscribe(result => console.log(result));
     Swal.fire({
       position: 'center',
       icon: 'success',

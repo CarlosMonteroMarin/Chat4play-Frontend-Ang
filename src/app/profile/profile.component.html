@@ -3,12 +3,23 @@
         <h1>INFORMACIÓN PERSONAL</h1>
         <form action="" enctype="multipart/form-data">
             <div class="col column_imagen_perfil">
-                <img class="imagen_perfil" src="../../assets/images/avatar2.png"><br>
-                <input class="file-select " type="file" name="adjunto" accept=".jpg,.png"/><br>
+                <img class="imagen_perfil" [src]="url"><br>
+
+                <select #teams (change)="onSelected(teams.value)">
+                    <option default>Escoge una foto de perfil!</option>
+                    <option>Seta</option>
+                    <option>Peter</option>
+                    <option>Minecraft</option>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                  </select>
+
+
+                <!--<input class="file-select " type="file" name="img_avatar" accept=".jpg,.png" (change)="onFileSelected($event)"/><br>-->
                 <p>{{usuario.apodo}}</p><br><br>
                 <div class="txt-subtitle">NOMBRE:</div>
                     <input class="box-write" type="text" [(ngModel)]="nombre" name="nombre" value="{{usuario.nombre}}"><br>
-                <div class="txt-subtitle" >APELLIDOS: </div>
+                <div class="txt-subtitle" >APELLIDOS:</div>
                     <input class="box-write" type="text" [(ngModel)]="apellidos" name="apellidos" value="{{usuario.apellidos}}"><br>
                 <div class="txt-subtitle" >APODO: </div>
                     <input class="box-write" type="text" [(ngModel)]="apodo" name="apodo" value="{{usuario.apodo}}"><br>
