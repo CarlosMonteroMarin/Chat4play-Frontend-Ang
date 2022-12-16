@@ -45,14 +45,15 @@ export class IntoChatComponent {
     );
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
     this.partyService.get(id).subscribe(result => this.party = result);
     this.usuarioService.get(1).subscribe(result => this.usuario = result);
-    this.mensajesService.getAll().subscribe(result => this.mensajes = result);
+    this.mensajes = await this.mensajesService.getAll().toPromise();
+    this.mensajes.reverse();
   }
 
-  enviarMensaje() {
+  async enviarMensaje() {
     let fecha = this.formatDate(new Date());
 
     if(this.texto_mensaje !="") {
@@ -65,11 +66,9 @@ export class IntoChatComponent {
 
       console.log(mensaje_aux);
 
-      this.mensajesService.create(mensaje_aux).subscribe(response => {
-        console.log(response);
-      });
+      await this.mensajesService.create(mensaje_aux).toPromise();
 
-      this.texto_mensaje = "";
+      window.location.reload();
     }
   }
 }
