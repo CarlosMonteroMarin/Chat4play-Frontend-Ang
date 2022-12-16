@@ -55,7 +55,7 @@ const routes: Routes = [
   component:HomeYeslogComponent
 },
 {
-  path:'into-chat',
+  path:'into-chat/:id',
   component:IntoChatComponent
 },
 {

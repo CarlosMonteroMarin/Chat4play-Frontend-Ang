@@ -17,4 +17,8 @@ export class MensajesService {
   get(id: any) {
     return this.http.get('https://proyecto-bbdd-production-faf3.up.railway.app/api/mensajes/'+id);
   }
+
+  create(data: any) {
+    return this.http.post('https://proyecto-bbdd-production-faf3.up.railway.app/api/mensajes', data);
+  }
 }
