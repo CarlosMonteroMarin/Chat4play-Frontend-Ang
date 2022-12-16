@@ -21,6 +21,6 @@ export class NavSupLatComponent {
   }
 
   ngOnInit() {
-    this.usuarioService.get(29).subscribe(result => this.usuario = result);
+    this.usuarioService.get(1).subscribe(result => this.usuario = result);
   }
 }

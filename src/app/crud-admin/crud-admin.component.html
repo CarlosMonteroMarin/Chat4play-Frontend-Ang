@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row">
+        <div style="margin-top:150px;text-align:center;">
+            <div class="col inline">
+                <button class="btn-primary-big" (click)="mostrarUsuarios()">USUARIOS</button>
+            </div>
+            <div class="col inline">
+                <button class="btn-primary-big" (click)="mostrarVideojuegos()">VIDEOJUEGOS</button>
+            </div>
+            <div class="col inline">
+                <button class="btn-primary-big" (click)="mostrarChats()">CHATS</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="button_clicked=='usuarios'">
+        <a href="/register-usuario" class="btn btn-primary add-button">AÑADIR USUARIO</a>
+    </div>
+    <div class="row" *ngIf="button_clicked=='videojuegos'">
+        <a href="/add-videogame" class="btn btn-primary add-button">AÑADIR VIDEOJUEGO</a>
+    </div>
+    <div class="row" *ngIf="button_clicked=='chats'">
+        <a href="/create-chat" class="btn btn-primary add-button">AÑADIR CHAT</a>
+    </div>
+
+    <table class="table" *ngIf="button_clicked=='usuarios'">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Apodo</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <th scope="row">{{ usuario.id_usuario }}</th>
+            <td scope="row">{{ usuario.apodo }}</td>
+            <td>
+                <button class="btn btn-primary icon">
+                    <i class="bi bi-eye-fill"></i>
+                </button>
+                <button [routerLink]="['/edit-usuario', usuario.id_usuario]" class="btn btn-success icon">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+                <button class="btn btn-danger icon" (click)="borrarUsuario(usuario.id_usuario)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+
+    <table class="table" *ngIf="button_clicked=='videojuegos'">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Título</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let videojuego of videojuegos">
+            <th scope="row">{{ videojuego.id_videojuego }}</th>
+            <td scope="row">{{ videojuego.titulo }}</td>
+            <td>
+                <button class="btn btn-primary icon">
+                    <i class="bi bi-eye-fill"></i>
+                </button>
+                <button [routerLink]="['/edit-videojuego', videojuego.id_videojuego]" class="btn btn-success icon">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+                <button class="btn btn-danger icon" (click)="borrarVideojuego(videojuego.id_videojuego)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+
+    <table class="table" *ngIf="button_clicked=='chats'">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let chat of chats">
+            <th scope="row">{{ chat.id_party }}</th>
+            <td scope="row">{{ chat.nombre }}</td>
+            <td>
+                <button class="btn btn-primary icon">
+                    <i class="bi bi-eye-fill"></i>
+                </button>
+                <a [routerLink]="['/edit-chat', chat.id_party]" class="btn btn-success icon">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
+                <button class="btn btn-danger icon" (click)="borrarChat(chat.id_party)">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="container content">
+  <div class="row">
+      <div class="col">
+          <form class="form-estructure">
+              <h1 class="titulo_iniciar_registrar">MODIFICA EL USUARIO</h1>
+              <div class="txt-subtitle">Nombre:</div>
+                  <input type="text" [(ngModel)]="usuario.nombre" name="nombre">
+              <div class="txt-subtitle">Apellidos:</div>
+                  <input type="text" [(ngModel)]="usuario.apellidos" name="apellidos">
+              <div class="txt-subtitle">Apodo:</div>
+                  <input type="text" [(ngModel)]="usuario.apodo" name="apodo">
+              <div class="txt-subtitle">Correo electrónico:</div>
+                  <input type="text" [(ngModel)]="usuario.email" name="email"><br>
+              <a href="/crud-admin" class="btn-primary button_style">VOLVER</a>
+              <button class="btn-primary" type="submit" (click)="modificarUsuario()">MODIFICAR</button>
+          </form>
+      </div>
+  </div>
+</div>

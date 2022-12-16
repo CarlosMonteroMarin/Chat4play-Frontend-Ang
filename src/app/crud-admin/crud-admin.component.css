@@ -1,0 +1,34 @@
+.btn-primary-big {
+    background-color: #741BE5;
+    color: white;
+    width: 150px;
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+.btn-primary-big:hover{
+    background-color: #a769f8;
+}
+
+.inline {
+    display: inline-block;
+}
+
+table {
+    margin-top: 50px;
+}
+
+.add-button {
+    margin-top: 20px;
+    width: 200px;
+    text-decoration:none;
+    text-align:center;
+}
+

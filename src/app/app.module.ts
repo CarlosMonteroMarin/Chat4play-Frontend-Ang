@@ -16,6 +16,11 @@ import { ElementsModule } from './elements/elements.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AddVideojuegoComponent } from './add-videojuego/add-videojuego.component';
+import { CrudAdminComponent } from './crud-admin/crud-admin.component';
+import { EditChatComponent } from './edit-chat/edit-chat.component';
+import { EditVideojuegoComponent } from './edit-videojuego/edit-videojuego.component';
+import { EditUsuariosComponent } from './edit-usuarios/edit-usuarios.component';
+import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { AddVideojuegoComponent } from './add-videojuego/add-videojuego.componen
     CreateChatComponent,
     IntoChatComponent,
     AddVideojuegoComponent,
+    CrudAdminComponent,
+    EditChatComponent,
+    EditVideojuegoComponent,
+    EditUsuariosComponent,
+    RegisterUsuarioComponent,
   ],
   imports: [
     BrowserModule,

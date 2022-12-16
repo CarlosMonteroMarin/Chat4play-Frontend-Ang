@@ -1,0 +1,23 @@
+<div class="container content">
+  <div class="row">
+      <div class="col">
+          <form class="form-estructure">
+              <h1 class="titulo_iniciar_registrar">REGISTRA UN USUARIO</h1>
+              <div class="txt-subtitle">Nombre:</div>
+                  <input type="text" [(ngModel)]="nombre" name="nombre">
+              <div class="txt-subtitle">Apellidos:</div>
+                  <input type="text" [(ngModel)]="apellidos" name="apellidos">
+              <div class="txt-subtitle">Apodo:</div>
+                  <input type="text" [(ngModel)]="apodo" name="apodo">
+              <div class="txt-subtitle">Correo electrónico:</div>
+                  <input type="text" [(ngModel)]="email" name="email">
+              <div class="txt-subtitle">Contraseña:</div>
+                  <input type="password" [(ngModel)]="contrasenia" name="contrasenia">
+              <div class="txt-subtitle">Confirmar contraseña:</div>
+                  <input type="password" [(ngModel)]="confirm_contra" name="confirm_contra"><br>
+              <a href="/crud-admin" class="btn-primary button_style">VOLVER</a>
+              <a href="/login"><button class="btn-primary" type="submit" (click)="register()">REGISTRAR</button></a>
+          </form>
+      </div>
+  </div>
+</div>

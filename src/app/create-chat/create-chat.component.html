@@ -9,7 +9,8 @@
                     <select class="selector-games" [(ngModel)]="id_videojuego" name="id_videojuego">
                         <option value = 0 disabled>Seleccionar...</option>
                         <option *ngFor="let videojuego of videojuegos" value="{{videojuego.id_videojuego}}">{{videojuego.titulo}}</option>
-                    </select><br><br><br><br><br><br>
+                    </select><br>
+                <a href="/home-yeslog" class="btn-primary button_style">VOLVER</a>
                 <button class="btn-primary" type="submit" (click)="guardarParty()">CREAR</button>
             </form>
         </div>

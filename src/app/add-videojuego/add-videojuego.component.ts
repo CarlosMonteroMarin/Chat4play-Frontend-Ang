@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { VideojuegoService } from '../elements/services/videojuego.service';
 import { Videojuego } from '../models/videojuego.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-videojuego',
@@ -20,10 +21,21 @@ export class AddVideojuegoComponent {
 
       this.videojuegoService.post(videojuego).subscribe(response => {
         console.log(response);
-        });
-        alert("Videojuego añadido correctamente.")
+      });
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Videojuego añadido con éxito',
+        confirmButtonText:'<a href="/crud-admin" style="text-decoration: none;color:white;">VOLVER</a>',
+      })
     }else{
-      alert("Complete todos los campos.");
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Error al añadir el videojuego',
+        showConfirmButton: false,
+        timer: 2000
+      })
     }
   }
 }

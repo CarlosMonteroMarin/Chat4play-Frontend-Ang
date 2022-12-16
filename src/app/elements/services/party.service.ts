@@ -11,24 +11,26 @@ export class PartyService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Party[]> {
-    return this.http.get<Party[]>('https://proyecto-bbdd-production-36ba.up.railway.app/api/party');
+    return this.http.get<Party[]>('https://proyecto-bbdd-production-faf3.up.railway.app/api/party');
   }
 
   get(id: any) {
-    return this.http.get('https://proyecto-bbdd-production-36ba.up.railway.app/api/party/'+id);
+    return this.http.get('https://proyecto-bbdd-production-faf3.up.railway.app/api/party/'+id);
   }
 
   create(data: any) {
-    return this.http.post('https://proyecto-bbdd-production-36ba.up.railway.app/api/party', data);
+    return this.http.post('https://proyecto-bbdd-production-faf3.up.railway.app/api/party', data);
   }
 
   findByNombre(nombre: any) {
-    return this.http.get<Party[]>('https://proyecto-bbdd-production-36ba.up.railway.app/api/party/nombre/'+nombre);
+    return this.http.get<Party[]>('https://proyecto-bbdd-production-faf3.up.railway.app/api/party/nombre/'+nombre);
+  }
+
+  put(id:any, data: any){
+    return this.http.put(`https://proyecto-bbdd-production-faf3.up.railway.app/api/party/${id}`, data);
   }
 
   delete(id: any) {
-    // if (usuario es admin o dueño del chat) {
-    return this.http.delete('https://proyecto-bbdd-production-36ba.up.railway.app/api/party/'+id);
-    // }
+    return this.http.delete('https://proyecto-bbdd-production-faf3.up.railway.app/api/party/'+id);
   }
 }

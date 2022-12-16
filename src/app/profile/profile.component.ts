@@ -35,7 +35,7 @@ export class ProfileComponent {
   }
 
   ngOnInit() {
-    this.usuarioService.get(29).subscribe(result => this.usuario = result);
+    this.usuarioService.get(1).subscribe(result => this.usuario = result);
     console.log(this.usuario.nombre)
   }
 
@@ -73,7 +73,7 @@ export class ProfileComponent {
       img_avatar:this.img_avatar
     }
 
-    this.usuarioService.put(29,usuario_aux).subscribe(result => console.log(result));
+    this.usuarioService.put(1,usuario_aux).subscribe(result => console.log(result));
     Swal.fire({
       position: 'center',
       icon: 'success',

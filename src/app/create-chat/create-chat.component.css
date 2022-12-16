@@ -60,3 +60,10 @@ h1 {
     padding: 20px;
     font-size: xx-large;
 }
+
+.button_style {
+  text-decoration: none;
+  padding: 11px;
+  border-radius: 15px;
+  margin-right: 30px;
+}

@@ -11,10 +11,10 @@ export class MensajesService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Mensajes[]> {
-    return this.http.get<Mensajes[]>('https://proyecto-bbdd-production-36ba.up.railway.app/api/mensajes');
+    return this.http.get<Mensajes[]>('https://proyecto-bbdd-production-faf3.up.railway.app/api/mensajes');
   }
 
   get(id: any) {
-    return this.http.get('https://proyecto-bbdd-production-36ba.up.railway.app/api/mensajes/'+id);
+    return this.http.get('https://proyecto-bbdd-production-faf3.up.railway.app/api/mensajes/'+id);
   }
 }
