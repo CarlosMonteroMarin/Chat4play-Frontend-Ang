@@ -19,4 +19,8 @@ export class MychatsComponent {
   ngOnInit() {
     this.partyService.getAll().subscribe(result => this.chats = result)
   }
+
+  joinChat(){
+
+  }
 }

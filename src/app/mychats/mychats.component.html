@@ -6,12 +6,13 @@
                 <div class="list-objects">
                     <div class="object" *ngFor="let lists of chats">
                         <ol>
-                            <li>{{lists.nombre}}</li>
-                            <li> | {{lists.videojuego.titulo}}</li>
+                            <li>{{lists.nombre}} </li>
+                            <li>| {{lists.videojuego.titulo}} ||</li>
+                            <li><button routerLink="/into-chat" class="btn-primary" type="submit" (click)="joinChat()">ENTRAR</button></li>
                         </ol>
                     </div>
                 </div>
-                <button class="btn-primary" type="submit" onclick="entrarChat()">ENTRAR</button>
+
             </div>
         </div>
     </div>

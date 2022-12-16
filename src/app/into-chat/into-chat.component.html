@@ -4,12 +4,16 @@
             <div class="form-create-chat">
                 <h1 id="h1-create-chat">CHAT</h1>
                 <div class="list-objects">
-                  <div *ngFor="let mensaje of mensajes">
-                    <p *ngIf="mensaje.party.id_party==party.id_party">{{mensaje.mensaje}}</p>
-                    <p *ngIf="mensaje.party.id_party==party.id_party">{{mensaje.usuario.apodo}}</p>
+                  <div *ngFor="let mensaje of mensajes" class="object">
+                    <ul>
+                      <li *ngIf="mensaje.party.id_party==party.id_party"><strong>{{mensaje.usuario.apodo}}: </strong></li>
+                      <li *ngIf="mensaje.party.id_party==party.id_party">{{mensaje.mensaje}}</li>
+                    </ul>
                   </div>
                 </div><br>
-                <input type="text" [(ngModel)]="texto_mensaje" name="mensaje"><br>
+                <form (submit)="enviarMensaje()">
+                  <input type="text" [(ngModel)]="texto_mensaje" name="mensaje"><br>
+                </form>
                 <button class="btn-primary" type="submit" (click)="enviarMensaje()">Enviar</button>
             </div>
         </div>

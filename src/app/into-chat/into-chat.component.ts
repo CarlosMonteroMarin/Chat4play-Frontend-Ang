@@ -17,7 +17,7 @@ export class IntoChatComponent {
 
   chat:any = null;
 
-  texto_mensaje:any;
+  texto_mensaje:string="";
 
   party:any;
 
