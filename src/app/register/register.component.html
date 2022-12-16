@@ -16,8 +16,8 @@
                     <input type="password" [(ngModel)]="contrasenia" name="contrasenia">
                 <div class="txt-subtitle">Confirmar contraseña:</div>
                     <input type="password" [(ngModel)]="confirm_contra" name="confirm_contra"><br>
-                <a href="/login"><button class="btn-primary" type="submit" (click)="register()">REGISTRAR</button></a>
-                <p class="tienes_cuenta"><a href="./login">¿Ya tienes cuenta? ¡Inicia sesión!</a></p>
+                <button routerLink="/login" class="btn-primary" type="submit" (click)="register()">REGISTRAR</button>
+                <p class="tienes_cuenta"><a routerLink="/login">¿Ya tienes cuenta? ¡Inicia sesión!</a></p>
             </form>
         </div>
     </div>
