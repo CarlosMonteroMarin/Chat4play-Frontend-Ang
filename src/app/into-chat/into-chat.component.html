@@ -5,12 +5,12 @@
                 <h1 id="h1-create-chat">CHAT</h1>
                 <h2>{{party.nombre}}</h2>
                 <div class="list-objects">
-                  <div *ngFor="let mensaje of mensajes" class="object">
-                    <ul>
-                      <li *ngIf="mensaje.party.id_party==party.id_party"><strong>{{mensaje.usuario.apodo}}: </strong></li>
-                      <li *ngIf="mensaje.party.id_party==party.id_party">{{mensaje.mensaje}}</li>
+                  <ng-container *ngFor="let mensaje of mensajes">
+                    <ul *ngIf="mensaje.party.id_party==party.id_party" class="object">
+                      <li><strong>{{mensaje.usuario.apodo}}: </strong></li>
+                      <li>{{mensaje.mensaje}}</li>
                     </ul>
-                  </div>
+                  </ng-container>
                 </div><br>
                 <form (submit)="enviarMensaje()">
                   <input type="text" [(ngModel)]="texto_mensaje" name="mensaje"><br>
