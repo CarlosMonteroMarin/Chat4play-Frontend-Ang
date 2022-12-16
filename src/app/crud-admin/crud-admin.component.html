@@ -36,9 +36,6 @@
             <th scope="row">{{ usuario.id_usuario }}</th>
             <td scope="row">{{ usuario.apodo }}</td>
             <td>
-                <button class="btn btn-primary icon">
-                    <i class="bi bi-eye-fill"></i>
-                </button>
                 <button [routerLink]="['/edit-usuario', usuario.id_usuario]" class="btn btn-success icon">
                     <i class="bi bi-pencil-square"></i>
                 </button>
@@ -63,9 +60,6 @@
             <th scope="row">{{ videojuego.id_videojuego }}</th>
             <td scope="row">{{ videojuego.titulo }}</td>
             <td>
-                <button class="btn btn-primary icon">
-                    <i class="bi bi-eye-fill"></i>
-                </button>
                 <button [routerLink]="['/edit-videojuego', videojuego.id_videojuego]" class="btn btn-success icon">
                     <i class="bi bi-pencil-square"></i>
                 </button>
@@ -90,9 +84,6 @@
             <th scope="row">{{ chat.id_party }}</th>
             <td scope="row">{{ chat.nombre }}</td>
             <td>
-                <button class="btn btn-primary icon">
-                    <i class="bi bi-eye-fill"></i>
-                </button>
                 <a [routerLink]="['/edit-chat', chat.id_party]" class="btn btn-success icon">
                     <i class="bi bi-pencil-square"></i>
                 </a>
