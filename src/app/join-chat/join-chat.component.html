@@ -12,7 +12,7 @@
                       <ol>
                           <li>{{lists.nombre}} || </li>
                           <li>{{lists.videojuego.titulo}} ||</li>
-                          <li><button routerLink="/into-chat" class="btn-primary-into" type="submit" (click)="joinChat()">ENTRAR</button></li>
+                          <li><button [routerLink]="['/into-chat',lists.id_party]" class="btn-primary-into" type="submit">ENTRAR</button></li>
                       </ol>
                   </div>
                 </div>

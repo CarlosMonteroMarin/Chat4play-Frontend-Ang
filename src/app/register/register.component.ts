@@ -39,8 +39,8 @@ export class RegisterComponent {
             position: 'center',
             icon: 'success',
             title: 'Usuario registrado correctamente',
-            showConfirmButton: false,
-            timer: 2000
+            confirmButtonText:'<a href="/login" style="text-decoration: none;color:white;">ACEPTAR</a>',
+
           })
       }else{
         Swal.fire({

@@ -51,7 +51,6 @@ ul li{
 .img-avatar{
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
     border-radius: 100%;
-    border: 2px solid;
     width: 200px;
     height: 200px;
 }

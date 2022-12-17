@@ -15,6 +15,7 @@
                 <form (submit)="enviarMensaje()">
                   <input type="text" [(ngModel)]="texto_mensaje" name="mensaje"><br>
                 </form>
+                <button routerLink="/my-chats" class="btn-primary volver"><i class="bi bi-box-arrow-left"></i></button>
                 <button class="btn-primary" type="submit" (click)="enviarMensaje()">Enviar</button>
             </div>
         </div>

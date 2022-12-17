@@ -21,12 +21,7 @@ export class JoinChatComponent {
 
     const nombre_chat = this.nombre;
 
-    console.log(nombre_chat);
-
     this.partyService.findByNombre(nombre_chat).subscribe(result => this.chats = result);
-  }
 
-  joinChat(){
-      /* Aqui faltaria unir el chat con el usuario utilizando el JSON WEB TOKEN y asi que quede en la columna party_usuario */
   }
 }
