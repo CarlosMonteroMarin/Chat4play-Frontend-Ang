@@ -7,8 +7,10 @@
                 <div class="list-objects">
                   <ng-container *ngFor="let mensaje of mensajes">
                     <ul *ngIf="mensaje.party.id_party==party.id_party" class="object">
-                      <li><strong>{{mensaje.usuario.apodo}}: </strong></li>
+                      <li><img class="img_mensaje" src="{{mensaje.usuario.img_avatar}}" alt="Foto perfil"></li>
+                      <li><strong> {{mensaje.usuario.apodo}}: </strong></li>
                       <li>{{mensaje.mensaje}}</li>
+                      <li class="fecha"> {{mensaje.fecha}}</li>
                     </ul>
                   </ng-container>
                 </div><br>
