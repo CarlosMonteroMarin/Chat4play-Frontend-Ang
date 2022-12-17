@@ -51,6 +51,8 @@ export class IntoChatComponent {
     this.usuarioService.get(1).subscribe(result => this.usuario = result);
     this.mensajes = await this.mensajesService.getAll().toPromise();
     this.mensajes.reverse();
+
+    setTimeout(() => this.ngOnInit(), 5000);
   }
 
   async enviarMensaje() {
@@ -68,7 +70,8 @@ export class IntoChatComponent {
 
       await this.mensajesService.create(mensaje_aux).toPromise();
 
-      window.location.reload();
+      this.texto_mensaje = "";
+      this.ngOnInit();
     }
   }
 }
