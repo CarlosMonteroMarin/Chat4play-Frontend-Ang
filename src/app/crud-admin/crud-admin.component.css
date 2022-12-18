@@ -1,7 +1,7 @@
 .btn-primary-big {
     background-color: #741BE5;
     color: white;
-    width: 150px;
+    width: 200px;
     height: 80px;
     border: none;
     border-radius: 15px;
@@ -26,7 +26,8 @@ table {
 }
 
 .add-button {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
     width: 200px;
     text-decoration:none;
     text-align:center;
