@@ -34,7 +34,7 @@ export class LoginComponent {
       this.apodo=null;
       this.contrasenia=null;
     }else {
-      await this.delay(1500);
+      await this.delay(1000);
       if (window.sessionStorage.getItem("auth-token")!=null) {
         this.router.navigate(['/home-yeslog']);
       }else{

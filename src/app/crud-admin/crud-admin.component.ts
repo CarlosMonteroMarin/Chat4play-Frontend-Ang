@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 import { PartyService } from '../elements/services/party.service';
 import { UsuarioService } from '../elements/services/usuario.service';
 import { VideojuegoService } from '../elements/services/videojuego.service';
@@ -15,7 +16,7 @@ export class CrudAdminComponent {
   chats:any = [];
 
   button_clicked:string = "usuarios";
-
+  bol: boolean=false;
   constructor(private usuarioService: UsuarioService, private videojuegoService: VideojuegoService, private partyService: PartyService) {}
 
   ngOnInit() {
@@ -44,29 +45,57 @@ export class CrudAdminComponent {
   }
 
   borrarUsuario(id:number) {
-    this.usuarioService.delete(id).subscribe(response => {
-      console.log(response);
-    },
-    error => {
-      console.log(error);
+    Swal.fire({
+      title: '¿Desea borrar el registro?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Borrar',
+      denyButtonText: `Cancelar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.usuarioService.delete(id).subscribe(response => {
+          console.log(response);
+        });
+      } else if (result.isDenied) {
+      }
     })
+
   }
 
   borrarVideojuego(id:number) {
-    this.videojuegoService.delete(id).subscribe(response => {
-      console.log(response);
-    },
-    error => {
-      console.log(error);
-    })
+      Swal.fire({
+        title: '¿Desea borrar el registro?',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Borrar',
+        denyButtonText: `Cancelar`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.videojuegoService.delete(id).subscribe(response => {
+            console.log(response);
+            });
+        } else if (result.isDenied) {
+        }
+      })
+
   }
 
   borrarChat(id:number) {
-    this.partyService.delete(id).subscribe(response => {
-      console.log(response);
-    },
-    error => {
-      console.log(error);
+
+    Swal.fire({
+      title: '¿Desea borrar el registro?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Borrar',
+      denyButtonText: `Cancelar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.partyService.delete(id).subscribe(response => {
+          console.log(response);
+        });
+      } else if (result.isDenied) {
+      }
     })
+
   }
 }
