@@ -5,10 +5,13 @@
                 <h1 id="h1-create-chat">MI LISTA DE CHATS</h1>
                 <div class="list-objects">
                     <div class="object" *ngFor="let lists of chats">
-                        <p><button [routerLink]="['/into-chat',lists.id_party]" class="btn-primary" type="submit" (click)="joinChat()"><i class="bi bi-box-arrow-in-right"></i>
+                      <ng-container *ngIf="lists !=null; else no_resultado">
+                        <p><button [routerLink]="['/into-chat',lists.id_party]" class="btn-primary" type="submit"><i class="bi bi-box-arrow-in-right"></i>
                         </button></p>
                         <p>Nombre: <strong>{{lists.nombre}}</strong>&nbsp; | &nbsp;</p>
                         <p>Juego: <strong>{{lists.videojuego.titulo}}</strong>&nbsp;</p>
+                      </ng-container>
+                      <ng-template #no_resultado><p>No tienes listas</p></ng-template>
                     </div>
                 </div>
             </div>

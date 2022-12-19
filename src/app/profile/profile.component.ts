@@ -17,7 +17,8 @@ export class ProfileComponent {
     apodo: '',
     contrasenia: '',
     email: '',
-    img_avatar:''
+    img_avatar:'',
+    rol: ''
   }
 
     nombre:string|any='';
@@ -26,6 +27,7 @@ export class ProfileComponent {
     contrasenia:string|any='';
     email:string|any='';
     img_avatar:string|any='';
+    rol: string|any='';
 
     selectedOption:string|any='';
     url="../assets/images_profiles/pregunta.png";
@@ -66,13 +68,17 @@ export class ProfileComponent {
 
     if((!this.img_avatar)){this.img_avatar=this.usuario.img_avatar}
 
+    if((!this.rol)){this.rol=this.usuario.rol}
+
+
     const usuario_aux: Usuario={
       nombre:this.nombre,
       apellidos:this.apellidos,
       apodo:this.apodo,
       contrasenia:this.contrasenia,
       email:this.email,
-      img_avatar:this.img_avatar
+      img_avatar:this.img_avatar,
+      rol: this.rol
     }
 
     this.usuarioService.put(1,usuario_aux).subscribe(result => console.log(result));
