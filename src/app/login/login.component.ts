@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UsuarioService } from '../elements/services/usuario.service';
 import { Router } from '@angular/router';
 import { TokenStorageService } from '../elements/services/token-storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -23,10 +24,29 @@ export class LoginComponent {
     this.usuarioService.login(usuario).subscribe((response: any) => {
       this.tokenStorageService.saveToken(response.token);
       });
-    await this.delay(1500);
-    if (window.sessionStorage.getItem("auth-token")!=null) {
-      this.router.navigate(['/home-yeslog']);
+    if(this.apodo ==null || this.contrasenia ==null){
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Error\nComplete todos los campos',
+        confirmButtonText:'ACEPTAR',
+      });
+      this.apodo=null;
+      this.contrasenia=null;
+    }else {
+      await this.delay(1500);
+      if (window.sessionStorage.getItem("auth-token")!=null) {
+        this.router.navigate(['/home-yeslog']);
+      }else{
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Error\nCredenciales incorrectas',
+          confirmButtonText:'ACEPTAR',
+        });
+      }
     }
+
   }
 
   delay(ms: number) {
