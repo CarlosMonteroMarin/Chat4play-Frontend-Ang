@@ -42,9 +42,28 @@
     top: 150px;
 }
 
-.carousel-size {
-  width: 700px;
-  margin: auto;
-  margin-top: 100px;
-  margin-bottom: -175px;
+.carousel-caption{
+  background-color: rgba(0, 0, 0, 0.555)!important;
+  font-weight: bold;
+  left: 0px;
+  width: 100%;
+  right: 0px;
+}
+
+@media only screen and (max-width: 500px) {
+  .carousel-size {
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: -175px;
+  }
+}
+
+@media only screen and (min-width: 499.99px) {
+  .carousel-size {
+    width: 95%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: -175px;
+  }
 }

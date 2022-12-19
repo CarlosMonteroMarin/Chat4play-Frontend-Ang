@@ -30,6 +30,7 @@
     font-weight: bold;
     margin-top: 50px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+
 }
 
 
@@ -38,14 +39,12 @@
   color: white;
   width: 70px;
   height: 30px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
   border: none;
   border-radius: 15px;
   font-size: 15px;
   font-weight: bold;
-
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
   margin-right: 10px;
-  float: right;
 }
 .btn-primary:hover{
     background-color: #a769f8;
@@ -90,17 +89,21 @@ h1 {
 
 .object{
   border-bottom: 2px solid gray;
-  font-weight: bold;
   text-align: left;
   color: black;
-  margin-top:10px;
+  padding:20px;
+  padding-bottom: 5px;
 }
 ::-webkit-scrollbar{
   display: none;
 }
 
-li{
-  display:inline;
+p{
+  display: inline-block;
+}
+
+i{
+  font-size: large;
 }
 
 

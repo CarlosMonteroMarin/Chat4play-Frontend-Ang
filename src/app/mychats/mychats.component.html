@@ -5,14 +5,12 @@
                 <h1 id="h1-create-chat">MI LISTA DE CHATS</h1>
                 <div class="list-objects">
                     <div class="object" *ngFor="let lists of chats">
-                        <ol>
-                            <li>{{lists.nombre}} </li>
-                            <li>| {{lists.videojuego.titulo}} ||</li>
-                            <li><button [routerLink]="['/into-chat',lists.id_party]" class="btn-primary" type="submit" (click)="joinChat()">ENTRAR</button></li>
-                        </ol>
+                        <p><button [routerLink]="['/into-chat',lists.id_party]" class="btn-primary" type="submit" (click)="joinChat()"><i class="bi bi-box-arrow-in-right"></i>
+                        </button></p>
+                        <p>Nombre: <strong>{{lists.nombre}}</strong>&nbsp; | &nbsp;</p>
+                        <p>Juego: <strong>{{lists.videojuego.titulo}}</strong>&nbsp;</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

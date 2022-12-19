@@ -33,7 +33,7 @@ export class IntoChatComponent {
     return (
       [
         this.padTo2Digits(date.getDate()),
-        this.padTo2Digits(date.getMonth() + 1),
+        this.padTo2Digits(date.getMonth()),
         date.getFullYear(),
       ].join('/') +
       ' ' +

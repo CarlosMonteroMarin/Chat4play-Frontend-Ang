@@ -35,8 +35,7 @@ export class CreateChatComponent {
         position: 'center',
         icon: 'success',
         title: 'Chat creado con éxito',
-        showConfirmButton: false,
-        timer: 2000
+        confirmButtonText:'<a href="/my-chats" style="text-decoration: none;color:white;">ACEPTAR</a>'
       })
 
       this.partyService.create(party).subscribe(response => {

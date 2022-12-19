@@ -9,15 +9,13 @@
                 <div class="txt-subtitle">RESULTADO DE LA BÚSQUEDA:</div>
                 <div class="list-objects" *ngIf="chats.length>0">
                   <div class="object" *ngFor="let lists of chats">
-                    <ol>
-                        <li>{{lists.nombre}} || </li>
-                        <li>{{lists.videojuego.titulo}} ||</li>
-                        <li><button [routerLink]="['/into-chat',lists.id_party]" class="btn-primary-into" type="submit">ENTRAR</button></li>
-                    </ol>
+                    <button [routerLink]="['/into-chat',lists.id_party]" class="btn-primary-into" type="submit"><i class="bi bi-box-arrow-in-right"></i></button>
+                    <p>Nombre: <strong>{{lists.nombre}}</strong>&nbsp;|&nbsp;</p>
+                    <p>Juego: <strong>{{lists.videojuego.titulo}}</strong></p>
                   </div>
                 </div>
                 <div class="list-objects" *ngIf="chats.length<=0">
-                    <li>No hay resultados</li>
+                    <p>No hay resultados</p>
                 </div>
             </form>
         </div>
