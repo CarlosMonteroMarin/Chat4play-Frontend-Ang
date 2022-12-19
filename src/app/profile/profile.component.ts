@@ -90,7 +90,7 @@ export class ProfileComponent {
       rol: this.rol
     }
 
-    this.usuarioService.put(1,usuario_aux).subscribe(result => console.log(result));
+    this.usuarioService.put(this.usuario.id_usuario,usuario_aux).subscribe(result => console.log(result));
     Swal.fire({
       position: 'center',
       icon: 'success',
