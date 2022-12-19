@@ -32,7 +32,7 @@ export class ProfileComponent {
   rol: string|any='';
 
   selectedOption:string|any='';
-  url="../assets/images_profiles/pregunta.png";
+  url="../assets/images/avatares/logo_azul.png";
 
   token: any;
   token_decoded: any;
