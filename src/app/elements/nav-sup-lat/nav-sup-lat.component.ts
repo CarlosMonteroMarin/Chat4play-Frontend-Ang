@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from '../services/token-storage.service';
 import { UsuarioService } from '../services/usuario.service';
+import decode from 'jwt-decode';
 
 @Component({
   selector: 'app-nav-sup-lat',
@@ -16,11 +18,25 @@ export class NavSupLatComponent {
     img_avatar:''
   }
 
-  constructor(private usuarioService: UsuarioService) {
+  token: any;
+  token_decoded: any;
+
+  constructor(private usuarioService: UsuarioService, private tokenStorageService: TokenStorageService) {
 
   }
 
-  ngOnInit() {
-    this.usuarioService.get(1).subscribe(result => this.usuario = result);
+  async ngOnInit() {
+    this.token = this.tokenStorageService.getToken();
+    if (this.token!=null) {
+      this.token_decoded = decode(this.token);
+    }
+    console.log(this.token_decoded.sub);
+    this.usuario = await this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
+    console.log(this.usuario);
+  }
+
+  cerrarSesion(){
+    this.tokenStorageService.signOut();
   }
 }
+

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from '../elements/services/usuario.service';
 import { Usuario } from '../models/usuario.model';
+import decode from 'jwt-decode';
 import Swal from 'sweetalert2';
 import { fromEvent, delay } from 'rxjs';
+import { TokenStorageService } from '../elements/services/token-storage.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +13,7 @@ import { fromEvent, delay } from 'rxjs';
 })
 export class ProfileComponent {
 
-   usuario: any = {
+  usuario: any = {
     nombre: '',
     apellidos: '',
     apodo: '',
@@ -21,24 +23,31 @@ export class ProfileComponent {
     rol: ''
   }
 
-    nombre:string|any='';
-    apellidos:string|any='';
-    apodo:string|any='';
-    contrasenia:string|any='';
-    email:string|any='';
-    img_avatar:string|any='';
-    rol: string|any='';
+  nombre:string|any='';
+  apellidos:string|any='';
+  apodo:string|any='';
+  contrasenia:string|any='';
+  email:string|any='';
+  img_avatar:string|any='';
+  rol: string|any='';
 
-    selectedOption:string|any='';
-    url="../assets/images_profiles/pregunta.png";
+  selectedOption:string|any='';
+  url="../assets/images_profiles/pregunta.png";
 
-  constructor(private usuarioService: UsuarioService) {
+  token: any;
+  token_decoded: any;
+
+  constructor(private usuarioService: UsuarioService, private tokenStorageService: TokenStorageService) {
 
   }
 
-  ngOnInit() {
-    this.usuarioService.get(1).subscribe(result => this.usuario = result);
-    console.log(this.usuario.nombre)
+  async ngOnInit() {
+    this.token = this.tokenStorageService.getToken();
+    if (this.token!=null) {
+      this.token_decoded = decode(this.token);
+    }
+    console.log(this.token_decoded.sub);
+    this.usuario = await this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
   }
 
   onSelected(value:string){

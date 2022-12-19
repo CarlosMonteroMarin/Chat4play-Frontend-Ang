@@ -30,7 +30,8 @@ export class RegisterComponent {
             apellidos: this.apellidos,
             apodo: this.apodo,
             email: this.email,
-            contrasenia: this.contrasenia
+            contrasenia: this.contrasenia,
+            rol: "user"
           };
 
           this.usuarioService.post(usuario).subscribe(response => {

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RolesService } from './roles.service';
+import { PartyUsuarioService } from './party-usuario.service';
 
-describe('RolesService', () => {
-  let service: RolesService;
+describe('PartyUsuarioService', () => {
+  let service: PartyUsuarioService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RolesService);
+    service = TestBed.inject(PartyUsuarioService);
   });
 
   it('should be created', () => {

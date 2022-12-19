@@ -5,10 +5,10 @@
             <form class="form-estructure">
                 <h1>INICIAR SESIÓN</h1>
                 <div class="txt-subtitle">Usuario:</div>
-                <input type="text" value="" name="nickname">
+                <input type="text" value="" [(ngModel)]="apodo" name="nickname">
                 <div class="txt-subtitle">Contraseña:</div>
-                <input type="password" value="" name="password"><br>
-                <a href="/home-yeslog"><button class="btn-primary" type="button" (click)="logear()">INICIAR</button></a>
+                <input type="password" value="" [(ngModel)]="contrasenia" name="password"><br>
+                <button class="btn-primary" type="button" (click)="logear()">INICIAR</button>
                 <p class="tienes_cuenta"><a href="./register">¿No tienes cuenta? ¡Regístrate!</a></p>
             </form>
         </div>

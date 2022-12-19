@@ -21,6 +21,7 @@ import { EditChatComponent } from './edit-chat/edit-chat.component';
 import { EditVideojuegoComponent } from './edit-videojuego/edit-videojuego.component';
 import { EditUsuariosComponent } from './edit-usuarios/edit-usuarios.component';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
+import { authInterceptorProviders } from './interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { RegisterUsuarioComponent } from './register-usuario/register-usuario.co
     ElementsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    authInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
