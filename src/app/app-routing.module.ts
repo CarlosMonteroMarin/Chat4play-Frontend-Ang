@@ -6,6 +6,7 @@ import { CrudAdminComponent } from './crud-admin/crud-admin.component';
 import { EditChatComponent } from './edit-chat/edit-chat.component';
 import { EditUsuariosComponent } from './edit-usuarios/edit-usuarios.component';
 import { EditVideojuegoComponent } from './edit-videojuego/edit-videojuego.component';
+import { AuthGuard } from './guards/auth.guard';
 import { HomeNologComponent } from './home-nolog/home-nolog.component';
 import { HomeYeslogComponent } from './home-yeslog/home-yeslog.component';
 import { IntoChatComponent } from './into-chat/into-chat.component';
@@ -20,31 +21,31 @@ const routes: Routes = [
 
 {
   path:'crud-admin',
-  component:CrudAdminComponent
+  component:CrudAdminComponent, canActivate: [AuthGuard]
 },
 {
   path:'register-usuario',
-  component:RegisterUsuarioComponent
+  component:RegisterUsuarioComponent, canActivate: [AuthGuard]
 },
 {
   path:'edit-usuario/:id',
-  component:EditUsuariosComponent
+  component:EditUsuariosComponent, canActivate: [AuthGuard]
 },
 {
   path:'edit-videojuego/:id',
-  component:EditVideojuegoComponent
+  component:EditVideojuegoComponent, canActivate: [AuthGuard]
 },
 {
   path:'add-videogame',
-  component:AddVideojuegoComponent
+  component:AddVideojuegoComponent, canActivate: [AuthGuard]
 },
 {
   path:'edit-chat/:id',
-  component:EditChatComponent
+  component:EditChatComponent, canActivate: [AuthGuard]
 },
 {
   path:'create-chat',
-  component:CreateChatComponent
+  component:CreateChatComponent, canActivate: [AuthGuard]
 },
 {
   path:'home-nolog',
@@ -52,15 +53,15 @@ const routes: Routes = [
 },
 {
   path:'home-yeslog',
-  component:HomeYeslogComponent
+  component:HomeYeslogComponent, canActivate: [AuthGuard]
 },
 {
   path:'into-chat/:id',
-  component:IntoChatComponent
+  component:IntoChatComponent, canActivate: [AuthGuard]
 },
 {
   path:'join-chat',
-  component:JoinChatComponent
+  component:JoinChatComponent, canActivate: [AuthGuard]
 },
 {
   path:'login',
@@ -68,11 +69,11 @@ const routes: Routes = [
 },
 {
   path:'my-chats',
-  component:MychatsComponent
+  component:MychatsComponent, canActivate: [AuthGuard]
 },
 {
   path:'profile',
-  component:ProfileComponent
+  component:ProfileComponent, canActivate: [AuthGuard]
 },
 {
   path:'register',

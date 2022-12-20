@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/models/usuario.model';
 
@@ -13,7 +14,7 @@ const httpOptions = {
 })
 export class UsuarioService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private jwtHelper: JwtHelperService) { }
 
   getAll(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>('https://proyecto-bbdd-production-faf3.up.railway.app/usuarios');
@@ -42,4 +43,12 @@ export class UsuarioService {
   getByApodo(apodo: any) {
     return this.http.get('https://proyecto-bbdd-production-faf3.up.railway.app/usuarios/nombre/'+apodo);
   }
+
+  isAuth(): boolean{
+    const token = sessionStorage.getItem('auth-token');
+    if(!sessionStorage.getItem('auth-token')){
+      return false;
+    }
+    return true;
+;  }
 }

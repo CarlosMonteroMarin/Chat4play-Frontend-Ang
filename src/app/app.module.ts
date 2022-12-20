@@ -22,6 +22,8 @@ import { EditVideojuegoComponent } from './edit-videojuego/edit-videojuego.compo
 import { EditUsuariosComponent } from './edit-usuarios/edit-usuarios.component';
 import { RegisterUsuarioComponent } from './register-usuario/register-usuario.component';
 import { authInterceptorProviders } from './interceptor/auth.interceptor';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { authInterceptorProviders } from './interceptor/auth.interceptor';
     HttpClientModule,
   ],
   providers: [
+    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    JwtHelperService,
     authInterceptorProviders
   ],
   bootstrap: [AppComponent]
