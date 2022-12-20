@@ -20,9 +20,11 @@ export class NavSupLatComponent {
   }
 
   async ngOnInit() {
+    console.log(this.tokenStorageService.getToken());
     this.token = this.tokenStorageService.getToken();
     if (this.token!=null) {
       this.token_decoded = decode(this.token);
+      console.log(this.token_decoded);
     }
     this.usuarioService.getByApodo(this.token_decoded.sub).subscribe(result => this.usuario = result);
     console.log(this.usuario);

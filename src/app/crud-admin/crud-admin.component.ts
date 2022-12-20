@@ -4,6 +4,10 @@ import Swal from 'sweetalert2';
 import { PartyService } from '../elements/services/party.service';
 import { UsuarioService } from '../elements/services/usuario.service';
 import { VideojuegoService } from '../elements/services/videojuego.service';
+import decode from 'jwt-decode';
+import { TokenStorageService } from '../elements/services/token-storage.service';
+import { Router } from '@angular/router';
+import { Usuario } from '../models/usuario.model';
 
 @Component({
   selector: 'app-crud-admin',
@@ -12,16 +16,41 @@ import { VideojuegoService } from '../elements/services/videojuego.service';
 })
 export class CrudAdminComponent {
 
+  usuario:any={
+    apellidos: '',
+    apodo: '',
+    contrasenia: '',
+    email: '',
+    nombre: '',
+    img_avatar: '',
+    rol: ''
+  };
   usuarios:any = [];
   videojuegos:any = [];
   chats:any = [];
-
+  token: any;
+  token_decoded: any;
   button_clicked:string = "usuarios";
   bol: boolean=false;
-  constructor(private usuarioService: UsuarioService, private videojuegoService: VideojuegoService, private partyService: PartyService) {}
+  constructor(private usuarioService: UsuarioService, private videojuegoService: VideojuegoService, private partyService: PartyService, private tokenStorageService: TokenStorageService, private router: Router) {}
 
   ngOnInit() {
-    this.usuarioService.getAll().subscribe(result => this.usuarios = result)
+    this.usuarioService.getAll().subscribe(result => this.usuarios = result);
+    this.token = this.tokenStorageService.getToken();
+    if (this.token!=null) {
+      this.token_decoded = decode(this.token);
+      console.log(this.token_decoded);
+    }
+    this.usuario=this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
+    if(this.usuario.rol != "admin"){
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Error\nNo tiene acceso',
+        confirmButtonText:'<a href="/home-yeslog" style="text-decoration: none;color:white;">VOLVER</a>',
+      });
+      this.router.navigate(['/home-yeslog']);
+    }
   }
 
   async mostrarUsuarios() {
