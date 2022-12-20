@@ -9,17 +9,11 @@ import decode from 'jwt-decode';
   styleUrls: ['./nav-sup-lat.component.css']
 })
 export class NavSupLatComponent {
-  usuario: any = {
-    nombre: '',
-    apellidos: '',
-    apodo: '',
-    contrasenia: '',
-    email: '',
-    img_avatar:''
-  }
+  usuario: any;
 
   token: any;
   token_decoded: any;
+  contador: number = 0;
 
   constructor(private usuarioService: UsuarioService, private tokenStorageService: TokenStorageService) {
 
@@ -30,9 +24,12 @@ export class NavSupLatComponent {
     if (this.token!=null) {
       this.token_decoded = decode(this.token);
     }
-    console.log(this.token_decoded.sub);
-    this.usuario = await this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
+    this.usuarioService.getByApodo(this.token_decoded.sub).subscribe(result => this.usuario = result);
     console.log(this.usuario);
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
   cerrarSesion(){

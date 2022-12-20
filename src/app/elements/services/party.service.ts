@@ -27,7 +27,7 @@ export class PartyService {
   }
 
   put(id:any, data: any){
-    return this.http.put(`https://proyecto-bbdd-production-faf3.up.railway.app/api/party/${id}`, data);
+    return this.http.put('https://proyecto-bbdd-production-faf3.up.railway.app/api/party/'+id, data);
   }
 
   delete(id: any) {

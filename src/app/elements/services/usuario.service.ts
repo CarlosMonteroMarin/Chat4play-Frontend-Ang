@@ -28,7 +28,7 @@ export class UsuarioService {
   }
 
   put(id:any, data: any){
-    return this.http.put(`https://proyecto-bbdd-production-faf3.up.railway.app/usuario/${id}`, data);
+    return this.http.put('https://proyecto-bbdd-production-faf3.up.railway.app/usuario/'+id, data);
   }
 
   delete(id: any) {

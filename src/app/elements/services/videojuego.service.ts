@@ -23,7 +23,7 @@ export class VideojuegoService {
   }
 
   put(id:any, data: any){
-    return this.http.put(`https://proyecto-bbdd-production-faf3.up.railway.app/api/videojuego/${id}`, data);
+    return this.http.put('https://proyecto-bbdd-production-faf3.up.railway.app/api/videojuego/'+id, data);
   }
 
   delete(id: any) {

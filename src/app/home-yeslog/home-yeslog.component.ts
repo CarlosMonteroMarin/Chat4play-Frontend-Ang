@@ -18,16 +18,11 @@ export class HomeYeslogComponent {
 
   current_user: any;
 
+  contador: number = 0;
+
   constructor(private usuarioService: UsuarioService, private tokenStorageService: TokenStorageService) {}
 
-  async ngOnInit() {
-    this.token = this.tokenStorageService.getToken();
-    if (this.token!=null) {
-      this.token_decoded = decode(this.token);
-    }
-    console.log(this.token_decoded.sub);
-    this.usuario = await this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
-    console.log(this.usuario);
+  ngOnInit() {
     /*this.token = window.sessionStorage.getItem("auth-token");
     if (this.token!=null){
       this.usuario = jwt_decode(this.token);

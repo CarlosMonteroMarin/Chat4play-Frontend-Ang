@@ -52,12 +52,12 @@ export class ProfileComponent {
 
   onSelected(value:string){
     switch(value){
-      case 'Avatar azul': {this.img_avatar="../assets/images/avatares/logo_azul.png";break;};
-      case 'Avatar amarillo': {this.img_avatar="../assets/images/avatares/logo_amarillo.png";break;};
-      case 'Avatar verde': {this.img_avatar="../assets/images/avatares/logo_verde.png";break;};
-      case 'Avatar rosa': {this.img_avatar="../assets/images/avatares/logo_rosa.png";break;};
-      case 'Avatar rojo': {this.img_avatar="../assets/images/avatares/logo_rojo.png";break;};
-      case 'Avatar cian': {this.img_avatar="../assets/images/avatares/logo_cian.png";break;};
+      case 'Avatar azul': {this.img_avatar="../../assets/images/avatares/logo_azul.png";break;};
+      case 'Avatar amarillo': {this.img_avatar="../../assets/images/avatares/logo_amarillo.png";break;};
+      case 'Avatar verde': {this.img_avatar="../../assets/images/avatares/logo_verde.png";break;};
+      case 'Avatar rosa': {this.img_avatar="../../assets/images/avatares/logo_rosa.png";break;};
+      case 'Avatar rojo': {this.img_avatar="../../assets/images/avatares/logo_rojo.png";break;};
+      case 'Avatar cian': {this.img_avatar="../../assets/images/avatares/logo_cian.png";break;};
 
     }
       this.url=this.img_avatar;
