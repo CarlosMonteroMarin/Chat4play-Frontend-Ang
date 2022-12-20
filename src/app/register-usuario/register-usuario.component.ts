@@ -23,23 +23,34 @@ export class RegisterUsuarioComponent {
   register(): void {
     if(this.nombre !="" && this.apellidos !="" && this.apodo !="" && this.email !="" && this.contrasenia !="" && this.confirm_contra !=""){
       if (this.contrasenia == this.confirm_contra){
-        const usuario : any = {
-          nombre: this.nombre,
-          apellidos: this.apellidos,
-          apodo: this.apodo,
-          email: this.email,
-          contrasenia: this.contrasenia
-        };
+        if(this.contrasenia.length>=8) {
+          const usuario : any = {
+            nombre: this.nombre,
+            apellidos: this.apellidos,
+            apodo: this.apodo,
+            email: this.email,
+            contrasenia: this.contrasenia,
+            rol: "user"
+          };
 
-        this.usuarioService.post(usuario).subscribe(response => {
-          console.log(response);
-          });
+          this.usuarioService.post(usuario).subscribe(response => {
+            console.log(response);
+            });
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Usuario registrado correctamente',
+              confirmButtonText:'<a href="/crud-admin" style="text-decoration: none;color:white;">VOLVER</a>',
+            })
+        }
+        else {
           Swal.fire({
             position: 'center',
-            icon: 'success',
-            title: 'Usuario registrado correctamente',
-            confirmButtonText:'<a href="/crud-admin" style="text-decoration: none;color:white;">VOLVER</a>',
+            icon: 'error',
+            title: 'Error\nLa contraseña debe tener al menos 8 carácteres',
+            confirmButtonText:'ACEPTAR',
           })
+        }
       }else{
         Swal.fire({
           position: 'center',

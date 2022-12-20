@@ -31,6 +31,10 @@ export class UsuarioService {
     return this.http.put('https://proyecto-bbdd-production-faf3.up.railway.app/usuario/'+id, data);
   }
 
+  putProfile(id:any, data: any){
+    return this.http.put('https://proyecto-bbdd-production-faf3.up.railway.app/usuario/put2/'+id, data);
+  }
+
   delete(id: any) {
     return this.http.delete('https://proyecto-bbdd-production-faf3.up.railway.app/usuario/'+id);
   }

@@ -32,7 +32,6 @@ export class ProfileComponent {
   rol: string|any='';
 
   selectedOption:string|any='';
-  url="../assets/images/avatares/logo_azul.png";
 
   token: any;
   token_decoded: any;
@@ -48,6 +47,7 @@ export class ProfileComponent {
     }
     console.log(this.token_decoded.sub);
     this.usuario = await this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
+    this.img_avatar = this.usuario.img_avatar;
   }
 
   onSelected(value:string){
@@ -60,7 +60,6 @@ export class ProfileComponent {
       case 'Avatar cian': {this.img_avatar="../../assets/images/avatares/logo_cian.png";break;};
 
     }
-      this.url=this.img_avatar;
   }
   guardarInfo(){
 
@@ -79,23 +78,38 @@ export class ProfileComponent {
 
     if((!this.rol)){this.rol=this.usuario.rol}
 
-
-    const usuario_aux: Usuario={
-      nombre:this.nombre,
-      apellidos:this.apellidos,
-      apodo:this.apodo,
-      contrasenia:this.contrasenia,
-      email:this.email,
-      img_avatar:this.img_avatar,
-      rol: this.rol
+    if(this.contrasenia.length>=8) {
+      const usuario_aux: Usuario={
+        nombre:this.nombre,
+        apellidos:this.apellidos,
+        apodo:this.apodo,
+        contrasenia:this.contrasenia,
+        email:this.email,
+        img_avatar:this.img_avatar,
+        rol: this.rol
+      }
+      if (usuario_aux.contrasenia == this.usuario.contrasenia) {
+        this.usuarioService.putProfile(this.usuario.id_usuario,usuario_aux).subscribe(result => console.log(result));
+      }
+      else {
+        this.usuarioService.put(this.usuario.id_usuario,usuario_aux).subscribe(result => console.log(result));
+      }
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Perfil modificado!',
+        confirmButtonText:'<a href="/home-yeslog" style="text-decoration: none;color:white;">VOLVER</a>',
+      })
+    }
+    else {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Error\nLa contraseña debe tener al menos 8 carácteres',
+        showConfirmButton: false,
+        timer: 2000
+      })
     }
 
-    this.usuarioService.put(this.usuario.id_usuario,usuario_aux).subscribe(result => console.log(result));
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Perfil modificado!',
-      confirmButtonText:'<a href="/home-yeslog" style="text-decoration: none;color:white;">VOLVER</a>',
-    })
   }
 }
