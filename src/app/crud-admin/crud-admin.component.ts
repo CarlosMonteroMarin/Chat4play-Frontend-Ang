@@ -30,18 +30,18 @@ export class CrudAdminComponent {
   chats:any = [];
   token: any;
   token_decoded: any;
-  button_clicked:string = "usuarios";
+  button_clicked:string = "";
   bol: boolean=false;
   constructor(private usuarioService: UsuarioService, private videojuegoService: VideojuegoService, private partyService: PartyService, private tokenStorageService: TokenStorageService, private router: Router) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.usuarioService.getAll().subscribe(result => this.usuarios = result);
     this.token = this.tokenStorageService.getToken();
     if (this.token!=null) {
       this.token_decoded = decode(this.token);
       console.log(this.token_decoded);
     }
-    this.usuario=this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
+    this.usuario = await this.usuarioService.getByApodo(this.token_decoded.sub).toPromise();
     if(this.usuario.rol != "admin"){
       Swal.fire({
         position: 'center',

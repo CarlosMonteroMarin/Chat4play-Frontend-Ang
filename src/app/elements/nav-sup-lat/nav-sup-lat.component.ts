@@ -19,8 +19,7 @@ export class NavSupLatComponent {
 
   }
 
-  async ngOnInit() {
-    console.log(this.tokenStorageService.getToken());
+  ngOnInit() {
     this.token = this.tokenStorageService.getToken();
     if (this.token!=null) {
       this.token_decoded = decode(this.token);

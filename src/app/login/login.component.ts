@@ -35,7 +35,7 @@ export class LoginComponent {
       this.contrasenia=null;
     }else {
       await this.delay(1000);
-      if (window.sessionStorage.getItem("auth-token")!=null) {
+      if (this.tokenStorageService.getToken()!=null) {
         this.router.navigate(['/home-yeslog']);
       }else{
         Swal.fire({

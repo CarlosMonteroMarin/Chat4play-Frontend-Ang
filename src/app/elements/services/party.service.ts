@@ -33,4 +33,8 @@ export class PartyService {
   delete(id: any) {
     return this.http.delete('https://proyecto-bbdd-production-faf3.up.railway.app/api/party/'+id);
   }
+
+  getMyParties(id: any) {
+    return this.http.get('https://proyecto-bbdd-production-faf3.up.railway.app/api/party/usuarios'+id);
+  }
 }

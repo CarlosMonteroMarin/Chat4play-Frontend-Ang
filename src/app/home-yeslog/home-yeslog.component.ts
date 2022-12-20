@@ -18,16 +18,15 @@ export class HomeYeslogComponent {
 
   current_user: any;
 
-  contador: number = 0;
-
   constructor(private usuarioService: UsuarioService, private tokenStorageService: TokenStorageService) {}
 
   ngOnInit() {
-    /*this.token = window.sessionStorage.getItem("auth-token");
-    if (this.token!=null){
-      this.usuario = jwt_decode(this.token);
-      console.log(this.usuario.sub);
-      this.usuarioService.getByApodo(this.usuario.sub).subscribe(result => console.log(result));
-    }*/
+    if (window.sessionStorage.getItem("firstLogin")==null) {
+      window.sessionStorage.setItem("firstLogin", "no");
+      window.location.reload();
+    }
+    else {
+      return;
+    }
   }
 }
