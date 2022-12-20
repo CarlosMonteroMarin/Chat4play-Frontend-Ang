@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { finalize } from 'rxjs';
 import Swal from 'sweetalert2';
 import { PartyService } from '../elements/services/party.service';
 import { UsuarioService } from '../elements/services/usuario.service';
@@ -53,7 +54,7 @@ export class CrudAdminComponent {
       denyButtonText: `Cancelar`,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.usuarioService.delete(id).subscribe(response => {
+        this.usuarioService.delete(id).pipe(finalize( () => this.mostrarUsuarios())).subscribe(response => {
           console.log(response);
         });
       } else if (result.isDenied) {
@@ -71,7 +72,7 @@ export class CrudAdminComponent {
         denyButtonText: `Cancelar`,
       }).then((result) => {
         if (result.isConfirmed) {
-          this.videojuegoService.delete(id).subscribe(response => {
+          this.videojuegoService.delete(id).pipe(finalize( () => this.mostrarVideojuegos())).subscribe(response => {
             console.log(response);
             });
         } else if (result.isDenied) {
@@ -90,7 +91,7 @@ export class CrudAdminComponent {
       denyButtonText: `Cancelar`,
     }).then((result) => {
       if (result.isConfirmed) {
-        this.partyService.delete(id).subscribe(response => {
+        this.partyService.delete(id).pipe(finalize( () => this.mostrarChats())).subscribe(response => {
           console.log(response);
         });
       } else if (result.isDenied) {
