@@ -44,6 +44,7 @@ export class LoginComponent {
           title: 'Error\nCredenciales incorrectas',
           confirmButtonText:'ACEPTAR',
         });
+        this.contrasenia=null;
       }
     }
 
