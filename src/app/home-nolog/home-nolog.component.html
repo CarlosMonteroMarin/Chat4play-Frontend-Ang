@@ -1,6 +1,6 @@
 <app-nav-sup-nologeado></app-nav-sup-nologeado>
 <div class="container" >
-    <div class="row">
+    <!--<div class="row">
         <div class="col box1">
             ¿QUIERES CREAR UNA COMUNIDAD DE TU JUEGO FAVORITO?
         </div>
@@ -11,4 +11,73 @@
             <p>AÑADE AMIGOS, CHATEA, JUEGA.</p>
         </div>
     </div>
+  -->
+    <div class="row">
+      <div id="carouselExampleCaptions" class="carousel slide carousel-size" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" style="box-shadow:0px 0px 10px black;">
+          <div class="carousel-item active">
+            <img src="../../assets/images/carrousel/8.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block" style="background-color:rgba(0,0,0,0.25);">
+              <h5>CREA</h5>
+              <p>¡Crea chats de tus juegos favoritos!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/images/carrousel/1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="background-color:rgba(0,0,0,0.25);">
+              <h5>CHATEA</h5>
+              <p>¡Queda con tus amigos para jugar a través de los chats!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../../assets/images/carrousel/3.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="background-color:rgba(0,0,0,0.25);">
+              <h5>JUEGA</h5>
+              <p>¡Juega a tus juegos favoritos con tus amigos!</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col box1">
+        <img class="card-img-top" src="../../assets/images/cards/chat.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Chat</h5>
+          <p class="card-text">¡Crea un chat para ti y todos tus amigos!</p>
+          <br>
+          <a routerLink="/login" class="btn btn-primary text-center" style="width:100%;">Crear un chat</a>
+        </div>
+      </div>
+      <div class="col box2">
+        <img class="card-img-top" src="../../assets/images/cards/videojuegos.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Videojuegos</h5>
+          <p class="card-text">¡Disfruta de una gran variedad de videojuegos, únete a un chat!</p>
+          <a routerLink="/login" class="btn btn-primary text-center" style="width:100%;">Unirse chat</a>
+        </div>
+      </div>
+      <div class="col box3">
+        <img class="card-img-top" src="../../assets/images/cards/mandos.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Amigos</h5>
+          <p class="card-text">¡Chatea con otros usuarios y personaliza tu perfil para que todos lo vean!</p>
+          <a routerLink="/login" class="btn btn-primary text-center" style="width:100%;">Personalizar perfil</a>
+        </div>
+      </div>
+  </div>
 </div>
+

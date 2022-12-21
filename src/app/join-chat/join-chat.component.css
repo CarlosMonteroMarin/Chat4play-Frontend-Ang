@@ -49,6 +49,9 @@
 .btn-primary:hover{
     background-color: #a769f8;
 }
+.btn-primary-into:hover{
+  background-color: #a769f8;
+}
 
 input {
     border: none;
