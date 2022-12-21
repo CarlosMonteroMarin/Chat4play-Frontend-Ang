@@ -41,6 +41,7 @@
   display: inline-block;
   position: relative;
   top: 150px;
+  margin-bottom: 150px;
 }
 
 .carousel-caption{
